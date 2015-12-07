@@ -1,0 +1,18 @@
+Package: balamuta
+Type: Package
+Title: Balamuta R Package
+Version: 1.0.0
+Date: 2015-12-06
+Authors@R: c(
+    person(given ="James", family = "Balamuta", middle = "Joseph", "balamut2@illinois.edu", c("aut", "cph","cre"))
+    )
+URL: https://github.com/coatless/balamuta
+BugReports: https://github.com/coatless/balamuta/issues
+Description: This package contains a large amount of common functions I use in
+    day to day analyses. The functions range from missing core R functions to useful
+    color manipulators.
+LinkingTo: Rcpp,
+    RcppArmadillo
+Suggests:
+    testthat
+RoxygenNote: 5.0.1
