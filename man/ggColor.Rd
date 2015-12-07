@@ -15,6 +15,9 @@ A \code{vector} containing \code{n} colors
 \description{
 Autogenerate a colors according to the ggplot selection mechanism.
 }
+\examples{
+ggColor(5)
+}
 \author{
 John Colby
 }

@@ -4,18 +4,28 @@
 \alias{rgb2hex}
 \title{Convert RGB Value to Hexadecimal}
 \usage{
-rgb2hex(R, G, B, pound = T)
+rgb2hex(R, G, B, pound = TRUE)
 }
 \arguments{
-\item{n}{An \code{int}}
+\item{R}{A \code{int} that is between 0 and 255 for the Red value.}
+
+\item{G}{A \code{int} that is between 0 and 255 for the Green value.}
+
+\item{B}{A \code{int} that is between 0 and 255 for the Blue value.}
+
+\item{pound}{A \code{bool} that indicates whether a pound sign should be prepended to the hexadecimal.}
 }
 \value{
-A \code{string} of length 2.
+A \code{string} containing the hexadecimal informatoin.
 }
 \description{
-This is a helper function for \link{rgb2hex}.
+This function converts an RGB value to the hexadecimal numbering system.
 }
 \examples{
-toHex(22)
+# Hexadecimal with pound sign
+rgb2hex(255,255,255)
+
+# Heaxadecimal without pound sign
+rgb2hex(255,255,255,FALSE)
 }
 

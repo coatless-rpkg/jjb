@@ -12,6 +12,21 @@
 #
 # You should have received a copy of the MIT License along with `balamuta`. If not, see <https://opensource.org/licenses/MIT>.
 
+
+#' @title Obtain the Trace of a Square Matrix
+#' @description Calculates and returns the trace of a square matrix.
+#' @param x A \code{matrix} that is square e.g. \eqn{N \times N}{N x N}
+#' @return A \code{matrix} with circles imprinted within its dimensions.
+#' @author James J Balamuta
+#' @examples 
+#' # I_2 matrix
+#' tr(diag(2))
+tr = function(x){
+  if(!is.matrix(x)){stop("x is not a matrix.")}
+  if(nrow(x) != ncol(x)){stop("Trace is not defined on a non-square matrix.")}
+  sum(diag(x))
+}
+
 #' @title Create a circle pattern within a matrix
 #' @description Takes a default matrix and embeds circles within the matrix.
 #' @param m A \code{int} that is the number of rows of the matrix 
@@ -25,17 +40,14 @@
 #' @examples 
 #' 
 #' # Generate a basic circle matrix
-#' circle_matrix(dims = c(10,10), 3, 4, 2)
+#' circle_matrix(10,10, 3, 4, 2)
 #' 
 #' # Generate two circles within the matrix
-#' circle_matrix(dims = c(10,10), c(3,6), c(4,6), c(2,2))
+#' circle_matrix(10,20, c(3,6), c(4,6), c(2,2))
 #' 
 #' # Different fills
-#' circle_matrix(dims = c(10,10), c(3,6), c(4,6), c(2,2), f = c(1,2))
-circle_matrix = function(dims, x.center, y.center, r, f = 1){
-  
-  xlim = dims[1]
-  ylim = dims[2]
+#' circle_matrix(10,20, c(3,6), c(4,6), c(2,2), f = c(1,2))
+circle_matrix = function(m, n, x.center, y.center, r, f = 1){
   
   p = length(y.center)
   
@@ -43,11 +55,11 @@ circle_matrix = function(dims, x.center, y.center, r, f = 1){
     stop("need to define points for each circle")
   }
   
-  if(any(x.center - r < 0) || any(x.center + r > xlim)){
+  if(any(x.center - r < 0) || any(x.center + r > m)){
     stop("X is outside of the center given radius")
   }
   
-  if(any(y.center - r < 0) || any(y.center + r > ylim)){
+  if(any(y.center - r < 0) || any(y.center + r > n)){
     stop("Y is outside of the center given radius")
   }
   
@@ -55,7 +67,7 @@ circle_matrix = function(dims, x.center, y.center, r, f = 1){
     f = rep(1,p)
   }
   
-  h = matrix(0, nrow = xlim, ncol=ylim)
+  h = matrix(0, nrow = m, ncol=n)
   
   for(k in 1:p){
     
