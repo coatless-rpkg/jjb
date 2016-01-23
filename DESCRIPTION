@@ -4,7 +4,7 @@ Title: Balamuta R Package
 Version: 1.0.0
 Date: 2015-12-06
 Authors@R: c(
-    person(given ="James", family = "Balamuta", middle = "Joseph", "balamut2@illinois.edu", c("aut", "cph","cre"))
+    person(given ="James", family = "Balamuta", email="balamut2@illinois.edu", role = c("aut", "cph","cre"))
     )
 License: MIT + file LICENSE
 URL: https://github.com/coatless/balamuta

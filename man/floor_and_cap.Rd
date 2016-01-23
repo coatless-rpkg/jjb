@@ -4,10 +4,12 @@
 \alias{floor_and_cap}
 \title{Floor and Cap a dataset}
 \usage{
-floor_and_cap(x)
+floor_and_cap(x, probs = c(0.025, 0.975))
 }
 \arguments{
 \item{x}{A \code{vector} that has length \eqn{N}.}
+
+\item{probs}{A \code{vector} containing two values between 0 and 1, with the first being less than the second.}
 }
 \value{
 A \code{vector} with the values floored and capped.
