@@ -4,12 +4,14 @@
 \alias{nb2latex}
 \title{Export Data in Scientific Notation to LaTeX}
 \usage{
-nb2latex(x, rounding = 4)
+nb2latex(x, rounding = 4, align = TRUE)
 }
 \arguments{
 \item{x}{A \code{numeric vector} to be formatted.}
 
 \item{rounding}{A \code{integer} that indicates how many decimal places should exist.}
+
+\item{align}{A \code{bool} that indicates whether phantom padding should be added to force column into alignment.}
 }
 \value{
 A \code{character vector} containing the latex notation.
@@ -28,6 +30,8 @@ x = rnorm(5,.0001,.2)
 nb2latex(x)
 
 nb2latex(x, rounding = 5)
+
+nb2latex(x, rounding = 5, align = FALSE)
 }
 \author{
 Stephane Guerrier & JJB
