@@ -42,3 +42,17 @@ nb2latex = function(x, rounding = 4, align = TRUE){
   
   paste0("$",sprintf(paste0("%.",rounding,"f"),nb),"\\cdot 10^{",pow,add,"}$")
 }
+
+
+#' Create a "safe" url title
+#' 
+#' Takes a string, forces characters to lower case, then removes punctuation and switch spaces to - instead of _
+#' @param st A \code{string} that needs to be a title in a url
+#' @return A \code{string} with the aforementioned modifications.
+#' @author JJB
+#' @examples 
+#' url_title("My Name is Jaime!")
+url_title = function(st){
+  st = tolower(st)
+  gsub("[[:space:]]","-",gsub("[[:punct:]]","",st))
+}
