@@ -31,7 +31,9 @@ is.rstudio = function(){
 #' @details 
 #' Depending on the operating system, the default drivers attempted to be used are:
 #' 
-#' OS X and Linux: quartz()
+#' OS X: quartz()
+#' 
+#' Linux: x11()
 #' 
 #' Windows: windows()
 #' 
@@ -51,11 +53,11 @@ external_graphs = function(ext = TRUE){
   if( is.rstudio() ){
     if(isTRUE(ext)){
       o = tolower(Sys.info()["sysname"])
-      if(o == "darwin" || o == "linux"){
-        options("device"="quartz")
-      }else if(o == "windows"){
-        options("device"="windows")
-      }
+      a = switch(o,
+                 "darwin"  = "quartz",
+                 "linux"   = "x11",
+                 "windows" = "windows")
+      options("device" = a)
     } else{
       options("device"="RStudioGD")
     }

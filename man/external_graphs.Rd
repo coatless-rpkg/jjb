@@ -15,7 +15,9 @@ Checks to see if the user is in RStudio. If so, then it changes the device to a 
 \details{
 Depending on the operating system, the default drivers attempted to be used are:
 
-OS X and Linux: quartz()
+OS X: quartz()
+
+Linux: x11()
 
 Windows: windows()
 
