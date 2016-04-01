@@ -17,6 +17,7 @@
 #' James Balamuta \email{balamut2@@illinois.edu}
 #' @name balamuta-package
 #' @importFrom grDevices graphics.off
+#' @importFrom utils write.table
 #' @docType package
 #' @exportPattern ^[[:alpha:]]+
 NULL
