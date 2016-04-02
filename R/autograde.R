@@ -46,9 +46,9 @@ gen_agfile = function(yhat, file.name = "ag_sub"){
   }
   
   # Remove file extension
-  file.name = tools::file_path_sans_ext(file.name)
+  file.name = tools::file_path_sans_ext(base::basename(file.name))
 
   write.table(yhat, file = paste0(file.name,".csv"), sep = ",",  row.names = F, col.names = F)
-  message("Wrote prediciton file ", file.name,".csv to ", getwd(), ".")
-  message(">> Remember to submit it to the autograder! <<")
+  message("Wrote prediciton file ", file.name,".csv to directory ", getwd(), ".")
+  message(">> Remember to submit the file to the autograder! <<")
 }
