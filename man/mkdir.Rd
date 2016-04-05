@@ -4,10 +4,12 @@
 \alias{mkdir}
 \title{Make Directory}
 \usage{
-mkdir(dir)
+mkdir(dir, r = TRUE)
 }
 \arguments{
 \item{dir}{A \code{string} indicating the directory to make.}
+
+\item{r}{A \code{boolean} that indicates whether the directories should be made recursively}
 }
 \value{
 New directory on file system
