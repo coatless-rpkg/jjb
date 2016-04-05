@@ -12,6 +12,82 @@
 # You should have received a copy of the MIT License along with `balamuta`. 
 # If not, see <https://opensource.org/licenses/MIT>.
 
+#' Accuracy of the model
+#' 
+#' Calculates the accuracy of the model by taking the mean of the number of times
+#' the truth, \eqn{y}, equals the predicted, \eqn{\hat{y}}{y hat}.
+#' 
+#' @param y    A \code{vector} of the true \eqn{y} values
+#' @param yhat A \code{vector} of predicted \eqn{\hat{y}}{y hat} values. 
+#' @return A \code{double} indicating the accuracy of the classification
+#' @examples 
+#' # Set seed for reproducibility
+#' set.seed(100)
+#' 
+#' # Generate data
+#' n = 1e2
+#' 
+#' y = round(runif(n))
+#' yhat = round(runif(n))
+#' 
+#' # Compute
+#' o = acc(y,yhat)
+acc = function(y, yhat) {
+  mean(y == yhat)
+}
+
+#' Mean Squared Error (MSE)
+#' 
+#' Calculates the mean square of the model by taking the mean of the
+#' sum of squares between the truth, \eqn{y}, and the predicted, \eqn{\hat{y}}{y hat} at each observation \eqn{i}.
+#' @inheritParams acc
+#' @details 
+#' The equation for MSE is:
+#' \deqn{\frac{1}{n}\sum\limits_{i = 1}^n {{{\left( {{y_i} - {{\hat y}_i}} \right)}^2}}}{mean((y-yhat)^2)}
+#' @return A \code{double} indicating the MSE
+#' @examples 
+#' # Set seed for reproducibility
+#' set.seed(100)
+#' 
+#' # Generate data
+#' n = 1e2
+#' 
+#' y = rnorm(n)
+#' yhat = rnorm(n,0.5)
+#' 
+#' # Compute
+#' o = mse(y,yhat)
+mse = function(y, yhat){
+  mean( (y - yhat) ^ 2)
+}
+
+#' Root Mean Squared Error (RMSE)
+#' 
+#' Calculates the root mean square of the model by taking the square root of mean of the
+#' sum of squares between the truth, \eqn{y}, and the predicted, \eqn{\hat{y}}{y hat} at each observation \eqn{i}.
+#' @inheritParams acc
+#' @details 
+#' The formula for RMSE is:
+#' \deqn{\sqrt {\frac{1}{n}\sum\limits_{i = 1}^n {{{\left( {{y_i} - {{\hat y}_i}} \right)}^2}} } }{sqrt(mean((y-yhat)^2))}
+#' @return A \code{double} indicating the RMSE
+#' @examples 
+#' # Set seed for reproducibility
+#' set.seed(100)
+#' 
+#' # Generate data
+#' n = 1e2
+#' 
+#' y = rnorm(n)
+#' yhat = rnorm(n,0.5)
+#' 
+#' # Compute
+#' o = mse(y,yhat)
+rmse = function(y, yhat) {
+  sqrt(mse(y,yhat))
+}
+
+
+
 #' @title Floor and Cap a dataset
 #' @description Floors and Caps a numeric variable.
 #' @param x      A \code{vector} that has length \eqn{N}.
