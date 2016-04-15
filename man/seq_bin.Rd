@@ -9,11 +9,12 @@ seq_bin(n, bins = 2, from = 1)
 \arguments{
 \item{n}{A \code{integer} that is the total number of objects.}
 
+\item{bins}{A \code{integer} indicating the number of bins.}
+
 \item{from}{A \code{integer} indicating where the sequence should start.}
-
-\item{splits}{A \code{integer} indicating the number of bins.}
-
-\item{A}{\code{vector} containing integer binning.}
+}
+\value{
+A \code{vector} containing integer binning.
 }
 \description{
 Creates a vector at equal level with the number of items per bin

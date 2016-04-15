@@ -44,10 +44,10 @@ is.whole = function(x){ is.numeric(x) && all(floor(x)==x) }
 #' with the overflow going to the last bin. That is, the last bin
 #' is filled with less elements than the prior bins. 
 #' 
-#' @param n      A \code{integer} that is the total number of objects.
-#' @param splits A \code{integer} indicating the number of bins. 
-#' @param from   A \code{integer} indicating where the sequence should start.
-#' @param A \code{vector} containing integer binning. 
+#' @param n    A \code{integer} that is the total number of objects.
+#' @param bins A \code{integer} indicating the number of bins. 
+#' @param from A \code{integer} indicating where the sequence should start.
+#' @return A \code{vector} containing integer binning. 
 #' @examples 
 #' # Evenly spaced
 #' a = seq_bin(100, 2)
