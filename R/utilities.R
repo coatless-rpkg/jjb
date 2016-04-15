@@ -83,20 +83,11 @@ seq_bin = function (n, bins = 2, from = 1) {
   
   if(bins == 1L) return(n)
   
-  per_tick = n/bins
+  per_tick = ceiling((n - from)/(bins - 1))
   
-  if(is.whole(per_tick)){
-    offset_val = 1L
-  }else{
-    per_tick = n/(bins-1)
-    offset_val = 2L
-  }
+  o = from + 0L:(bins-1) * per_tick
   
-  o = from + (0L:(bins - offset_val)) * ceiling(per_tick)
-  
-  if(n %% bins != 0){
-    o = c(o, n)
-  }
+  o[bins] = n
   
   o
 }
