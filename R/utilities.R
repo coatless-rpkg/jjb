@@ -38,6 +38,24 @@ mkdir = function(dir, r = TRUE) {
 #' is.whole(c(7,.8,9))
 is.whole = function(x){ is.numeric(x) && all(floor(x)==x) } 
 
+#' Lag Vector Values
+#' 
+#' Provides a lagging mechanism for vector data.
+#' @param x   A \code{vec} of data.
+#' @param lag An \code{integer}.
+#' @return A \code{vector} with lagged values / NAs. 
+#' @examples 
+#' x = rnorm(10)
+#' 
+#' lagged(x, 2)
+lagged = function(x, lag = 1){
+  if(lag == 0){return(x)}
+  x[1:lag] = NA
+  
+  return(x)
+}
+
+
 #' Integer Bins with Overflow
 #' 
 #' Creates a vector at equal level with the number of items per bin
