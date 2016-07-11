@@ -133,7 +133,7 @@ dropbox_stop = function(dbpy_loc = "~/"){
 #' dropbox_puburl("path/to/file.R")
 #' }
 dropbox_puburl = function(fp, dbpy_loc = "~/"){
-  if(grepl("\\bPublic\\b",fp)){
+  if(isTRUE(grepl("\\bPublic\\b",fp))){
     dropbox_command(paste0("puburl ", fp), dbpy_loc)
   }else{
     stop("Error: File is not in the `Public` folder. Please use `dropbox_sharelink()`!")
