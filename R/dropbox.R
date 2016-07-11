@@ -50,7 +50,7 @@ install_dropbox_cli = function(){
 #' }
 dropbox_command = function(cmd, dbpy_loc = "~/"){
   message("Executing ", cmd, " via ", dbpy_loc,"dropbox.py")
-  system(paste0(dbpy_loc, "dropbox.py ", cmd, intern = T))
+  system(paste0(dbpy_loc, "dropbox.py ", cmd), intern = T)
 }
 
 #' Enable or Disable the autostartup feature
@@ -133,9 +133,15 @@ dropbox_stop = function(dbpy_loc = "~/"){
 #' dropbox_puburl("path/to/file.R")
 #' }
 dropbox_puburl = function(fp, dbpy_loc = "~/"){
-  if(isTRUE(grepl("\\bPublic\\b",fp))){
-    dropbox_command(paste0("puburl ", fp), dbpy_loc)
-  }else{
+  if( isTRUE(grepl("\\bPublic\\b",fp)) ) {
+    
+    if(file.exists(fp)){
+      dropbox_command(paste0("puburl ", fp), dbpy_loc)
+    } else {
+      stop("Error: The requested file does not exist on the disk!")
+    }
+    
+  } else {
     stop("Error: File is not in the `Public` folder. Please use `dropbox_sharelink()`!")
   }
 }
