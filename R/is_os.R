@@ -93,6 +93,7 @@ require.sun = function(){
 #' System Architecture
 #' 
 #' @return Either "x64" or "x32"
+#' @export
 get_arch = function(){
   sys.arch
 }
