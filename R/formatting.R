@@ -8,6 +8,7 @@
 #' @return
 #' A \code{character vector} containing the latex notation. 
 #' @author Stephane Guerrier & JJB
+#' @export
 #' @examples 
 #' 
 #' # For reproducibility
@@ -50,6 +51,7 @@ nb2latex = function(x, rounding = 4, align = TRUE){
 #' @param st A \code{string} that needs to be a title in a url
 #' @return A \code{string} with the aforementioned modifications.
 #' @author JJB
+#' @export
 #' @examples 
 #' url_title("My Name is Jaime!")
 url_title = function(st){

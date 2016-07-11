@@ -17,6 +17,7 @@
 #' @param n An \code{integer} indicating how many colors user wants.
 #' @return A \code{vector} containing \code{n} colors
 #' @author John Colby
+#' @export
 #' @examples
 #' ggColor(5)
 ggColor = function(n) {
@@ -29,6 +30,7 @@ ggColor = function(n) {
 #' This function takes a single R, G, or B numeric value and converts it to hex.
 #' @param n An \code{int}
 #' @return A \code{string} of length 2. 
+#' @export
 #' @examples
 #' toHex(22)
 toHex = function(n) {
@@ -47,6 +49,7 @@ toHex = function(n) {
 #' @param B A \code{int} that is between 0 and 255 for the Blue value.
 #' @param pound A \code{bool} that indicates whether a pound sign should be prepended to the hexadecimal.
 #' @return A \code{string} containing the hexadecimal informatoin.
+#' @export
 #' @examples
 #' # Hexadecimal with pound sign
 #' rgb2hex(255,255,255)
@@ -64,6 +67,7 @@ rgb2hex = function(R,G,B,pound=TRUE) {
 #' @param rgbval A \code{vector} with length \eqn{3 \times 1}{3 x 1}.
 #' @param tint_factor A \code{double} that ranges between [0,1].
 #' @return A \code{matrix} with dimensions \eqn{3 \times 1}{3 x 1}.
+#' @export
 #' @examples
 #' tint(c(22,150,230), tint_factor = 0.5)
 tint = function(rgbval, tint_factor = 0.2){
@@ -83,6 +87,7 @@ tint = function(rgbval, tint_factor = 0.2){
 #' @param rgbval A \code{vector} with length \eqn{3 \times 1}{3 x 1}.
 #' @param shade_factor A \code{double} that ranges between [0,1].
 #' @return A \code{matrix} with dimensions \eqn{3 \times 1}{3 x 1}.
+#' @export
 #' @examples
 #' shade(c(22,150,230), shade_factor = 0.5)
 shade = function(rgbval, shade_factor = 0.1){

@@ -5,6 +5,7 @@
 #' @param dir A \code{string} indicating the directory to make.
 #' @param r   A \code{boolean} that indicates whether the directories should be made recursively
 #' @return New directory on file system
+#' @export
 #' @examples 
 #' \dontrun{
 #' # Make directory from working directory
@@ -30,6 +31,7 @@ mkdir = function(dir, r = TRUE) {
 #' @param x A \code{numeric} value to check to see if it is an integer.
 #' @return A \code{boolean} value indicating whether the value is an integer or not.
 #' @author JJB
+#' @export
 #' @examples
 #' is.whole(2.3)
 #' is.whole(4)
@@ -44,6 +46,7 @@ is.whole = function(x){ is.numeric(x) && all(floor(x)==x) }
 #' @param x   A \code{vec} of data.
 #' @param lag An \code{integer}.
 #' @return A \code{vector} with lagged values / NAs. 
+#' @export
 #' @examples 
 #' x = rnorm(10)
 #' 
@@ -66,6 +69,7 @@ lagged = function(x, lag = 1){
 #' @param bins A \code{integer} indicating the number of bins. 
 #' @param from A \code{integer} indicating where the sequence should start.
 #' @return A \code{vector} containing integer binning. 
+#' @export
 #' @examples 
 #' # Evenly spaced
 #' a = seq_bin(100, 2)

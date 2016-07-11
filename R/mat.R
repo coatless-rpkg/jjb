@@ -18,6 +18,7 @@
 #' @param x A \code{matrix} that is square e.g. \eqn{N \times N}{N x N}
 #' @return A \code{matrix} with circles imprinted within its dimensions.
 #' @author James J Balamuta
+#' @export
 #' @examples 
 #' # I_2 matrix
 #' tr(diag(2))
@@ -37,6 +38,7 @@ tr = function(x){
 #' @param f A \code{vector} of values that specify what the inside of the circles should be.
 #' @return A \code{matrix} with circles imprinted within its dimensions.
 #' @author James J Balamuta
+#' @export
 #' @examples 
 #' 
 #' # Generate a basic circle matrix

@@ -5,6 +5,7 @@
 #' @param file.name A \code{string} to name the file (without a file extension).
 #' @return A \code{.csv} with observations on each new line written to the working
 #' directory given by \code{getwd()}.
+#' @export
 #' @examples 
 #' 
 #' # Set seed for reproducibility

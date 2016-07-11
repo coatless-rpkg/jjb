@@ -18,6 +18,7 @@
 #' @param i A \code{int} between 1 and length. 
 #' @return A \code{string} of length 1.
 #' @author James J Balamuta
+#' @export
 #' @examples
 #' 
 #' s = "statistics"

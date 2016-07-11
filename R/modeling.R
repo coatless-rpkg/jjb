@@ -20,6 +20,7 @@
 #' @param y    A \code{vector} of the true \eqn{y} values
 #' @param yhat A \code{vector} of predicted \eqn{\hat{y}}{y hat} values. 
 #' @return A \code{double} indicating the accuracy of the classification
+#' @export
 #' @examples 
 #' # Set seed for reproducibility
 #' set.seed(100)
@@ -45,6 +46,7 @@ acc = function(y, yhat) {
 #' The equation for MSE is:
 #' \deqn{\frac{1}{n}\sum\limits_{i = 1}^n {{{\left( {{y_i} - {{\hat y}_i}} \right)}^2}}}{mean((y-yhat)^2)}
 #' @return A \code{double} indicating the MSE
+#' @export
 #' @examples 
 #' # Set seed for reproducibility
 #' set.seed(100)
@@ -70,6 +72,7 @@ mse = function(y, yhat){
 #' The formula for RMSE is:
 #' \deqn{\sqrt {\frac{1}{n}\sum\limits_{i = 1}^n {{{\left( {{y_i} - {{\hat y}_i}} \right)}^2}} } }{sqrt(mean((y-yhat)^2))}
 #' @return A \code{double} indicating the RMSE
+#' @export
 #' @examples 
 #' # Set seed for reproducibility
 #' set.seed(100)
@@ -94,6 +97,7 @@ rmse = function(y, yhat) {
 #' @param probs  A \code{vector} containing two values between 0 and 1, with the first being less than the second.
 #' @return A \code{vector} with the values floored and capped. 
 #' @author James J Balamuta
+#' @export
 #' @examples 
 #' 
 #' # One case version
@@ -135,6 +139,7 @@ floor_and_cap = function(x, probs=c(.025,0.975)){
 #' @param cast A \code{string vector} containing either \code{"n"} (numeric), \code{"c"} (character), or \code{"f"} (factor).
 #' @return A \code{data.frame} with converted column types.
 #' @author James J Balamuta
+#' @export
 #' @examples 
 #' 
 #' n = 100
