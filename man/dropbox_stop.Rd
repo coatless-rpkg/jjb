@@ -13,11 +13,13 @@ the \code{"dropbox.py"} CLI interface.}
 \description{
 Turns the dropbox daemon off
 }
-\author{
-James Joseph Balamuta
+\examples{
 \dontrun{
 # Stop the daemon
 dropbox_stop()
 }
+}
+\author{
+James Joseph Balamuta
 }
 

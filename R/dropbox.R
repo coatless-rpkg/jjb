@@ -42,6 +42,12 @@ install_dropbox_cli = function(){
 #' @param dbpy_loc A \code{string} indicating the location of
 #' the \code{"dropbox.py"} CLI interface.
 #' @author James Joseph Balamuta
+#' @export
+#' @examples
+#' \dontrun{
+#' # Start process
+#' dropbox_command("start")
+#' }
 dropbox_command = function(cmd, dbpy_loc = "~/"){
   message("Executing ", cmd, " via ", dbpy_loc,"dropbox.py")
   system(paste0(dbpy_loc, "dropbox.py ", cmd, intern = T))
@@ -87,6 +93,7 @@ dropbox_autostart = function(autostart = T, dbpy_loc = "~/"){
 #' Turns the dropbox daemon online
 #' @inheritParams dropbox_command
 #' @author James Joseph Balamuta
+#' @export
 #' @examples
 #' \dontrun{
 #' # Start the daemon
@@ -102,6 +109,8 @@ dropbox_start = function(dbpy_loc = "~/"){
 #' @param dbpy_loc A \code{string} indicating the location of
 #' the \code{"dropbox.py"} CLI interface.
 #' @author James Joseph Balamuta
+#' @export
+#' @examples
 #' \dontrun{
 #' # Stop the daemon
 #' dropbox_stop()
@@ -117,6 +126,8 @@ dropbox_stop = function(dbpy_loc = "~/"){
 #' @param dbpy_loc A \code{string} indicating the location of
 #' the \code{"dropbox.py"} CLI interface.
 #' @author James Joseph Balamuta
+#' @export
+#' @examples
 #' \dontrun{
 #' # Return the file
 #' dropbox_puburl("path/to/file.R")
@@ -142,6 +153,8 @@ dropbox_puburl = function(fp, dbpy_loc = "~/"){
 #' This was inspired by \href{http://michaellevy.name/blog/useR-talk-on-teaching-R/}{Michael Levy's UseR2016 Talk}
 #'  (\href{https://channel9.msdn.com/Events/useR-international-R-User-conference/useR2016/Teaching-R-to-200-people-in-a-week#time=07m20s}{See the part at 7:20})
 #' @author James Joseph Balamuta
+#' @export
+#' @examples
 #' \dontrun{
 #' # Return the file with live streaming enabled
 #' dropbox_puburl_live("path/to/file.R")

@@ -14,6 +14,12 @@ the \code{"dropbox.py"} CLI interface.}
 Enables the use of the system terminal's
 \code{"dropbox.py"} CLI interface.
 }
+\examples{
+\dontrun{
+# Start process
+dropbox_command("start")
+}
+}
 \author{
 James Joseph Balamuta
 }

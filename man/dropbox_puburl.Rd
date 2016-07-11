@@ -15,11 +15,13 @@ the \code{"dropbox.py"} CLI interface.}
 \description{
 Returns the Public File URL in Dropbox's public folder
 }
-\author{
-James Joseph Balamuta
+\examples{
 \dontrun{
 # Return the file
 dropbox_puburl("path/to/file.R")
 }
+}
+\author{
+James Joseph Balamuta
 }
 

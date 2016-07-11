@@ -25,11 +25,13 @@ For more details please see:
 This was inspired by \href{http://michaellevy.name/blog/useR-talk-on-teaching-R/}{Michael Levy's UseR2016 Talk}
  (\href{https://channel9.msdn.com/Events/useR-international-R-User-conference/useR2016/Teaching-R-to-200-people-in-a-week#time=07m20s}{See the part at 7:20})
 }
-\author{
-James Joseph Balamuta
+\examples{
 \dontrun{
 # Return the file with live streaming enabled
 dropbox_puburl_live("path/to/file.R")
 }
+}
+\author{
+James Joseph Balamuta
 }
 
