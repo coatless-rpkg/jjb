@@ -4,17 +4,21 @@
 \alias{install_dropbox_cli}
 \title{Install Dropbox CLI version on Linux}
 \usage{
-install_dropbox_cli(autostart = TRUE)
-}
-\arguments{
-\item{autostart}{A \code{boolean} indicating whether autostart should be enabled
-or disabled.}
+install_dropbox_cli()
 }
 \description{
 Downloads and installs the linux Dropbox CLI version
 using advice given \url{https://www.dropbox.com/install?os=lnx}
 }
 \details{
-Attempts to install Dropbox CLI support
+Attempts to install Dropbox CLI support in the default location of 
+\code{"~/Dropbox"}, \code{"~/.dropbox-dist/dropboxd"}, and 
+\code{"~/dropbox.py"}.
+}
+\examples{
+\dontrun{
+# Install Dropbox CLI to local directory
+install_dropbox_cli()
+}
 }
 
