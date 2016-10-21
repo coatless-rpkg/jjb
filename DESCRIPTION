@@ -2,16 +2,15 @@ Package: balamuta
 Type: Package
 Title: Balamuta R Package
 Version: 1.0.0
-Date: 2015-12-06
+Date: 2016-10-20
 Authors@R: c(
     person(given ="James", family = "Balamuta", email="balamut2@illinois.edu", role = c("aut", "cph","cre"))
     )
 License: MIT + file LICENSE
 URL: https://github.com/coatless/balamuta
 BugReports: https://github.com/coatless/balamuta/issues
-Description: This package contains a large amount of common functions I use in
-    day to day analyses. The functions range from missing core R functions to useful
-    color manipulators.
+Description: Contained within this package are sets of common functions used
+   for manipulating colors, graphings, modeling, formating, and more.
 Suggests:
     testthat
 RoxygenNote: 5.0.1
