@@ -1,0 +1,47 @@
+---
+title: "An Overview of Miscellaneousness"
+author: "James Balamuta"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{An Overview of Miscellaneousness}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+# Utilities
+
+The package hosts various utilities to improve working with simulated data.
+
+In particular, the package offers the ability to cast a simulation `matrix` to
+`data.frame` for graphing within `ggplot2`. The simulation cast feature is
+meant to ease the use of simulated data within `ggplot2`. Thus, support exists
+for both casting simulated data stored by row (default) and by column into a
+`Round` and `Draw` framework, where `Round` means the simulation iteration and
+`Draw` means the statistic observed.
+
+```{r simulation_objects}
+# Set Seed
+set.seed(5812)
+
+# Generate data
+m = matrix(rnorm(10), 2, 5)
+
+# Organize by row
+wide_m = sim_df(m)
+
+# View first 5 rows
+head(wide_m, n = 5)
+
+# Organize by column
+long_m = sim_df(m, wide = FALSE)
+
+# View first 5 rows
+head(long_m, n = 5)
+
+# Graph wide
+autoplot(wide_m)
+
+# Graph long
+autoplot(long_m)
+```

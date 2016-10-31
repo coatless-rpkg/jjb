@@ -12,5 +12,8 @@ BugReports: https://github.com/coatless/balamuta/issues
 Description: Contained within this package are sets of common functions used
    for manipulating colors, graphings, modeling, formating, and more.
 Suggests:
-    testthat
+    testthat,
+    knitr,
+    rmarkdown
 RoxygenNote: 5.0.1
+VignetteBuilder: knitr
