@@ -44,6 +44,6 @@ study_df(m1,m2,m3)
 study_df(m1,m2,m3, wide = FALSE, data_names = c("Hello", "Goodbye", "Wabbit"))
 }
 \author{
-JJB
+James Balamuta
 }
 

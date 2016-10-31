@@ -32,9 +32,12 @@ set.seed(5812)
 m = matrix(rnorm(10), 2,5)
 
 # Organize data.frame by row
-simdf(m)
+sim_df(m)
 
 # Organize by column
-simdf(m, wide = FALSE)
+sim_df(m, wide = FALSE)
+}
+\author{
+James Balamuta
 }
 
