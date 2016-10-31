@@ -38,10 +38,11 @@ m2 = matrix(rnorm(10), 2, 5)
 m3 = matrix(rnorm(10), 2, 5)
 
 # Organize data.frame by row
-study_df(m1,m2,m3)
+study_df(m1, m2, m3)
 
 # Organize by column
-study_df(m1,m2,m3, wide = FALSE, data_names = c("Hello", "Goodbye", "Wabbit"))
+study_df(m1, m2, m3, wide = FALSE, 
+         data_names = c("Hello", "Goodbye", "Wabbit"))
 }
 \author{
 James Balamuta

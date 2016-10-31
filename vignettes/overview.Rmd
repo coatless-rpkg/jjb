@@ -9,6 +9,30 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
+# Intro
+
+The package contains different functions that I have found useful throughout
+my time working with _R_. Whether they are beneficial to you, or want you to
+pull out your hair, I'll leave that up to you and the issue tracker.
+
+With this being said, to use the package, first install it via either CRAN or
+GitHub:
+
+```{r eval = FALSE}
+# install.packages("devtools")
+devtools::install_github("coatless/balamuta@*release")
+install.packages("balamuta")
+```
+
+Then load it via:
+
+```{r}
+library("balamuta")
+```
+
+You may wish at times to use functions within this package that collide with similarly named functions in other packages. To do so, please prefix function 
+calls by `balamuta::` or `balamuta:::` if the function is not exported.
+
 # Utilities
 
 The package hosts various utilities to improve working with simulated data.

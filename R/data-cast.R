@@ -40,6 +40,14 @@
 #' # Organize by column
 #' sim_df(m, wide = FALSE)
 sim_df = function(m, wide = TRUE){
+
+  o = cast_simdf(m, wide)
+    
+  class(o) = c("sim_df", "data.frame")
+  o
+}
+
+cast_simdf = function(m, wide = TRUE){
   if(!is.matrix(m)){stop("`m` must be a `matrix`.")}
   
   n = nrow(m)
@@ -52,10 +60,7 @@ sim_df = function(m, wide = TRUE){
   }
   
   # Hacked from as.data.frame(as.table())
-  o = data.frame(expand.grid(Round = Round, Draw = Draw), Values = c(m))
-  
-  class(o) = c("sim_df", "data.frame")
-  o
+  data.frame(expand.grid(Round = Round, Draw = Draw), Values = c(m))
 }
 
 
@@ -87,10 +92,11 @@ sim_df = function(m, wide = TRUE){
 #' m3 = matrix(rnorm(10), 2, 5)
 #' 
 #' # Organize data.frame by row
-#' study_df(m1,m2,m3)
+#' study_df(m1, m2, m3)
 #'
 #' # Organize by column
-#' study_df(m1,m2,m3, wide = FALSE, data_names = c("Hello", "Goodbye", "Wabbit"))
+#' study_df(m1, m2, m3, wide = FALSE, 
+#'          data_names = c("Hello", "Goodbye", "Wabbit"))
 study_df = function(..., wide = TRUE, data_names = NULL){
   
   obj_list = list(...)
@@ -107,7 +113,7 @@ study_df = function(..., wide = TRUE, data_names = NULL){
   for(i in seq_along(obj_list)){
     temp = cast_simdf(obj_list[[i]], wide = wide)
 
-    temp$Type = obj_names
+    temp$Type = obj_names[i]
     
     obj_list[[i]] = temp
   }
@@ -122,7 +128,8 @@ study_df = function(..., wide = TRUE, data_names = NULL){
 #' Plot Simulation Trials
 #'
 #' Constructs a line graph containing different simulations
-#' @param x,object An \code{\link{simdf}} object.
+#' @param x,object An \code{\link{sim_df}} object.
+#' @param ...      Not used...
 #' @export
 #' @rdname plot.simdf
 #' @examples
@@ -133,18 +140,23 @@ study_df = function(..., wide = TRUE, data_names = NULL){
 #' m = matrix(rnorm(10), 2,5)
 #'
 #' # Organize data.frame by row
-#' sim = cast_simdf(m)
+#' sim = sim_df(m)
 #'
-#' # Graph Sim
+#' # Correct ggplot2 usage
+#' autoplot(sim)
+#' 
+#' # Base R 
 #' plot(sim)
-plot.simdf = function(x, ...){
-  autoplot.simdf(object = x, ...)
+plot.sim_df = function(x, ...){
+  autoplot.sim_df(object = x, ...)
 }
-
 
 #' @export
 #' @rdname plot.simdf
-autoplot.simdf = function(object, type = "line", ...){
+autoplot.sim_df = function(object, ...){
+  
+  Draw = Values = Round = NULL
+  
   ggplot(object, aes(x = Draw, y = Values, group = factor(Round),
                      color = factor(Round))) +
     geom_line(size = 1) +
