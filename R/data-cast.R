@@ -94,14 +94,12 @@ sim_df = function(m, wide = TRUE){
 study_df = function(..., wide = TRUE, data_names = NULL){
   
   obj_list = list(...)
-  obj_names = as.character(substitute(...()))
   
   n = length(obj_list)
   
   if(length(data_names) != n) {
     message("No list of names detected... Substituting object names.")
-    print(obj_names)
-    obj_names = obj_names
+    obj_names = as.character(substitute(...()))
   } else {
     obj_names = data_names
   }
