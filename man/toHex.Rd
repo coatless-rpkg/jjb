@@ -19,4 +19,3 @@ This function takes a single R, G, or B numeric value and converts it to hex.
 \examples{
 toHex(22)
 }
-

@@ -2,9 +2,9 @@
 % Please edit documentation in R/is_os.R
 \name{require.linux}
 \alias{require.linux}
+\alias{require.windows}
 \alias{require.macos}
 \alias{require.sun}
-\alias{require.windows}
 \title{Require a Specific Operating System}
 \usage{
 require.linux()
@@ -20,10 +20,9 @@ Mandates the presence of an operating system
 }
 \details{
 If any of these functions are called
-on the wrong operating system. A stop error 
+on the wrong operating system. A stop error
 is triggered and the function will fail.
 }
 \author{
 James Joseph Balamuta
 }
-

@@ -39,4 +39,3 @@ circle_matrix(10,20, c(3,6), c(4,6), c(2,2), f = c(1,2))
 \author{
 James J Balamuta
 }
-

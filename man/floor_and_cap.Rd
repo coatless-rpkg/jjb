@@ -38,4 +38,3 @@ o = sapply(d,floor_and_cap)
 \author{
 James J Balamuta
 }
-

@@ -22,4 +22,3 @@ tr(diag(2))
 \author{
 James J Balamuta
 }
-

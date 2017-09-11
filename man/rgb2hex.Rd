@@ -28,4 +28,3 @@ rgb2hex(255,255,255)
 # Heaxadecimal without pound sign
 rgb2hex(255,255,255,FALSE)
 }
-

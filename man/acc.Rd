@@ -31,4 +31,3 @@ yhat = round(runif(n))
 # Compute
 o = acc(y,yhat)
 }
-

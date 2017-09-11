@@ -40,4 +40,3 @@ sim_df(m, wide = FALSE)
 \author{
 James Balamuta
 }
-

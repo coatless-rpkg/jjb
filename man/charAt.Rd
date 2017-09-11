@@ -25,4 +25,3 @@ charAt(s,1)
 \author{
 James J Balamuta
 }
-

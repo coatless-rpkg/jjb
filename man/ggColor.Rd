@@ -21,4 +21,3 @@ ggColor(5)
 \author{
 John Colby
 }
-

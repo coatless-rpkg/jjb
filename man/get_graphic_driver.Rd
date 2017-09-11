@@ -21,10 +21,9 @@ Provides the default operating system graphics utility
 # Returns a string depending on test platform
 get_graphic_driver()
 }
-\author{
-James Joseph Balamuta
-}
 \seealso{
 \code{\link{is.rstudio}}
 }
-
+\author{
+James Joseph Balamuta
+}

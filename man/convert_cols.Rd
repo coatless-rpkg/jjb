@@ -3,7 +3,7 @@
 \name{convert_cols}
 \alias{convert_cols}
 \title{Convert Multiple Columns of a data.frame
- 
+
 All at once conversion of a data.frame from current column types to alternates.}
 \usage{
 convert_cols(d, cast)
@@ -18,7 +18,7 @@ A \code{data.frame} with converted column types.
 }
 \description{
 Convert Multiple Columns of a data.frame
- 
+
 All at once conversion of a data.frame from current column types to alternates.
 }
 \examples{
@@ -41,4 +41,3 @@ d[,c(1,3)] = convert_cols(d[,c(1,3)],c("f","f"))
 \author{
 James J Balamuta
 }
-

@@ -12,4 +12,3 @@ Either "x64" or "x32"
 \description{
 System Architecture
 }
-

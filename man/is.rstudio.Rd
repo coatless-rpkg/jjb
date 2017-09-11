@@ -18,4 +18,3 @@ is.rstudio()
 \author{
 JJB
 }
-

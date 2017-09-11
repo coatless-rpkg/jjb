@@ -47,4 +47,3 @@ study_df(m1, m2, m3, wide = FALSE,
 \author{
 James Balamuta
 }
-

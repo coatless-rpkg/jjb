@@ -35,4 +35,3 @@ yhat = rnorm(n,0.5)
 # Compute
 o = mse(y,yhat)
 }
-

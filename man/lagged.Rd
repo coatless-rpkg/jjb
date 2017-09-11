@@ -22,4 +22,3 @@ x = rnorm(10)
 
 lagged(x, 2)
 }
-

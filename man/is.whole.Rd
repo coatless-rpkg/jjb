@@ -26,4 +26,3 @@ is.whole(c(7,.8,9))
 James J Balamuta
 }
 \keyword{internal}
-
