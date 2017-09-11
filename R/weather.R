@@ -67,11 +67,11 @@ fahrenheit_to_kelvin = function(t_fahrenheit) {
   (t_fahrenheit + 459.67) * 5 / 9
 }
 
-#' Celsius to Kelvin Conversion
+#' Kelvin to Fahrenheit Conversion
 #'
 #' Converts temperature recorded in Celsius to Kelvin.
 #'
-#' @param t_celsius Temperature recorded in Celsius.
+#' @param t_kelvin Temperature recorded in Kelvin.
 #' @return A `numeric` vector.
 #' @export
 kelvin_to_fahrenheit = function(t_kelvin) {

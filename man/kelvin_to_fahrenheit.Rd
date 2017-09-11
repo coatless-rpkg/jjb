@@ -2,12 +2,12 @@
 % Please edit documentation in R/weather.R
 \name{kelvin_to_fahrenheit}
 \alias{kelvin_to_fahrenheit}
-\title{Celsius to Kelvin Conversion}
+\title{Kelvin to Fahrenheit Conversion}
 \usage{
 kelvin_to_fahrenheit(t_kelvin)
 }
 \arguments{
-\item{t_celsius}{Temperature recorded in Celsius.}
+\item{t_kelvin}{Temperature recorded in Kelvin.}
 }
 \value{
 A \code{numeric} vector.
