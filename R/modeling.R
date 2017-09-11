@@ -12,6 +12,56 @@
 # You should have received a copy of the MIT License along with `balamuta`. 
 # If not, see <https://opensource.org/licenses/MIT>.
 
+#' Remove Feature Scaling of Values
+#'
+#' Undo the normalization of values done with
+#' feature scaling.
+#' @param x_norm Normalized Values
+#' @param x_min Minimum non-normalized value
+#' @param x_max Maximum non-normalized value
+#' @return A `numeric` vector.
+#' @details
+#' Converts from the feature scaled or normalized value given by:
+#' 
+#' \deqn{x[norm] = (x-x[min])/(x[max]-x[min])}{x_{norm} = \frac{(x-x_{min})}{(x_{max}-x_{min})}}
+#'
+#' To the original or denormalized value given by:
+#' 
+#' \deqn{x = x[norm] * (x[max] - x[min]) + x[min]}{x = x_{norm} * (x_{max} - x_{min}) + x_{min}}
+#' 
+#' @examples 
+#' temperatures = c(94.2, 88.1, 32, 0)
+#'
+#' temperatures_norm   = feature_scale(temperatures, min(temperatures), max(temperatures))
+#' temperatures_denorm = feature_descale(temperatures_norm, min(temperatures), max(temperatures))
+#' 
+#' all.equal(temperatures_denorm, temperatures)
+feature_descale = function(x_norm, x_min, x_max){
+  stopifnot( all(is.numeric(x_norm)) & is.numeric(x_min) & is.numeric(x_max) )
+  x_norm * (x_max - x_min) + x_min
+}
+
+#' Feature Scale Values
+#'
+#' Apply a feature scaling normalization procedure on Values
+#' @param x     Values
+#' @param x_min Minimum non-normalized Values
+#' @param x_max Maximum non-normalized Values
+#' @return A `numeric` vector.
+#' @details
+#' Feature scale equation to normalize values:
+#' 
+#' \deqn{x[norm] = (x-x[min])/(x[max]-x[min])}{x_{norm} = \frac{(x-x_{min})}{(x_{max}-x_{min})}}
+#' 
+#' @examples 
+#' temperatures = c(94.2, 88.1, 32, 0)
+#'
+#' temperatures_norm = feature_scale(temperatures, min(temperatures), max(temperatures))
+feature_scale <- function(x, x_min, x_max){
+  stopifnot( all(is.numeric(x)) & is.numeric(x_min) & is.numeric(x_max) )
+  (x - x_min)/(x_max - x_min)
+}
+
 #' Accuracy of the model
 #' 
 #' Calculates the accuracy of the model by taking the mean of the number of times
