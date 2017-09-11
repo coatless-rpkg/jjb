@@ -65,7 +65,7 @@ rgb2hex = function(R,G,B,pound=TRUE) {
 #' @title Tint an RGB value
 #' @description The function tints or lightens an RGB value by adding white to the values.
 #' @param rgbval A \code{vector} with length \eqn{3 \times 1}{3 x 1}.
-#' @param tint_factor A \code{double} that ranges between [0,1].
+#' @param tint_factor A \code{double} that ranges between \eqn{[0, 1]}.
 #' @return A \code{matrix} with dimensions \eqn{3 \times 1}{3 x 1}.
 #' @export
 #' @examples
@@ -85,7 +85,7 @@ tint = function(rgbval, tint_factor = 0.2){
 #' @title Shade an RGB value
 #' @description The function shades or darkens an RGB value by adding black to the values.
 #' @param rgbval A \code{vector} with length \eqn{3 \times 1}{3 x 1}.
-#' @param shade_factor A \code{double} that ranges between [0,1].
+#' @param shade_factor A \code{double} that ranges between \eqn{[0, 1]}.
 #' @return A \code{matrix} with dimensions \eqn{3 \times 1}{3 x 1}.
 #' @export
 #' @examples
