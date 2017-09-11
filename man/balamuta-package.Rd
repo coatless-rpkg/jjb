@@ -2,23 +2,22 @@
 % Please edit documentation in R/balamuta_package.R
 \docType{package}
 \name{balamuta-package}
+\alias{balamuta}
 \alias{balamuta-package}
-\title{Balamuta R Package}
+\title{balamuta: Balamuta R Package}
 \description{
-The package contains functions useful functions for doing analysis within R, working with graphics, and strings.
+Contained within this package are sets of common functions used
+for manipulating colors, graphings, modeling, formating, and more.
 }
-\details{
-\tabular{ll}{
-Package: \tab balamuta\cr
-Type: \tab Package\cr
-Version: \tab 1.0.0\cr
-Date: \tab 2015-12-06\cr
-License: \tab MIT + file LICENSE\cr
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/coatless/balamuta}
+  \item Report bugs at \url{https://github.com/coatless/balamuta/issues}
 }
+
 }
 \author{
-James Balamuta \email{balamut2@illinois.edu}
+\strong{Maintainer}: James Balamuta \email{balamut2@illinois.edu} [copyright holder]
 
-James Balamuta \email{balamut2@illinois.edu}
 }
-
