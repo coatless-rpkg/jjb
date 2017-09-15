@@ -34,5 +34,5 @@ nb2latex(x, rounding = 5)
 nb2latex(x, rounding = 5, align = FALSE)
 }
 \author{
-Stephane Guerrier & JJB
+Stephane Guerrier & James Balamuta
 }

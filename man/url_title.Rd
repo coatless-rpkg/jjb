@@ -19,5 +19,5 @@ Takes a string, forces characters to lower case, then removes punctuation and sw
 url_title("My Name is Jaime!")
 }
 \author{
-JJB
+James Balamuta
 }
