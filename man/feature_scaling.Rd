@@ -2,17 +2,18 @@
 % Please edit documentation in R/feature-scaling.R
 \name{feature_scaling}
 \alias{feature_scaling}
-\alias{feature_derescale}
 \alias{feature_rescale}
+\alias{feature_derescale}
+\alias{feature_derescale}
 \alias{feature_norm}
 \alias{feature_denorm}
 \alias{feature_standardize}
 \alias{feature_destandardize}
 \title{Feature Scaling}
 \usage{
-feature_derescale(x_rescaled, x_min, x_max)
-
 feature_rescale(x, x_min = NULL, x_max = NULL)
+
+feature_derescale(x_rescaled, x_min, x_max)
 
 feature_norm(x, x_norm = NULL)
 
@@ -23,11 +24,13 @@ feature_standardize(x, x_mean = NULL, x_sd = NULL)
 feature_destandardize(x_std, x_mean = NULL, x_sd = NULL)
 }
 \arguments{
+\item{x}{Numeric values}
+
 \item{x_min}{Minimum non-normalized numeric value}
 
 \item{x_max}{Maximum non-normalized numeric value}
 
-\item{x}{Numeric values}
+\item{x_rescaled}{Rescaled values of \code{x}.}
 
 \item{x_norm}{Euclidean norm of x}
 
@@ -121,4 +124,7 @@ x_std  = feature_standardize(x, x_mean, x_sd)
 x_recovery = feature_destandardize(x, x_mean, x_sd)
 
 all.equal(x, x_recovery)
+}
+\author{
+James Balamuta
 }

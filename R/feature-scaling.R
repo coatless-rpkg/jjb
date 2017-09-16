@@ -20,6 +20,7 @@
 #' @param x_min  Minimum non-normalized numeric value
 #' @param x_max  Maximum non-normalized numeric value
 #' @return A `numeric` vector.
+#' @author James Balamuta
 #' @details
 #' The following functions provide a means to either scale features or 
 #' to descale the features and return them to normal. These functions
@@ -77,13 +78,6 @@
 #' temperatures_denorm = feature_derescale(temperatures_norm, temp_min, temp_max)
 #' 
 #' all.equal(temperatures, temperatures_denorm)
-feature_derescale = function(x_rescaled, x_min, x_max){
-  stopifnot( all(is.numeric(x_rescaled)) & is.numeric(x_min) & is.numeric(x_max) )
-  x_rescaled * (x_max - x_min) + x_min
-}
-
-#' @rdname feature_scaling
-#' @export
 feature_rescale = function(x, x_min = NULL, x_max = NULL) {
 
   stopifnot( all(is.numeric(x)) )
@@ -94,6 +88,14 @@ feature_rescale = function(x, x_min = NULL, x_max = NULL) {
   stopifnot( is.numeric(x_min) & is.numeric(x_max) )
              
   (x - x_min)/(x_max - x_min)
+}
+
+#' @param x_rescaled Rescaled values of `x`.
+#' @rdname feature_scaling
+#' @export
+feature_derescale = function(x_rescaled, x_min, x_max){
+  stopifnot( all(is.numeric(x_rescaled)) & is.numeric(x_min) & is.numeric(x_max) )
+  x_rescaled * (x_max - x_min) + x_min
 }
 
 #' @rdname feature_scaling
@@ -136,6 +138,7 @@ feature_denorm = function(x_norm_std, x_norm = NULL) {
 #' @param x_sd   Standard Deviation of `x` values
 #' @rdname feature_scaling
 #' @export
+#' @importFrom stats sd
 feature_standardize = function(x, x_mean = NULL, x_sd = NULL) {
   
   stopifnot( all(is.numeric(x)) )
@@ -162,7 +165,7 @@ feature_standardize = function(x, x_mean = NULL, x_sd = NULL) {
 #' all.equal(x, x_recovery)
 feature_destandardize = function(x_std, x_mean = NULL, x_sd = NULL) {
   
-  stopifnot( all(is.numeric(x)) )
+  stopifnot( all(is.numeric(x_std)) )
   
   stopifnot( is.numeric(x_mean) & is.numeric(x_sd) & x_sd > 0 )
   
