@@ -18,7 +18,7 @@ A \code{character vector} containing the latex notation.
 }
 \description{
 Takes a vector of observations and converts them to have the
-scientific notation in LaTeX. E.g. \code{0.0003 => 3 \cdot 10^{-4}}
+scientific notation in LaTeX. E.g. \eqn{0.0003 \Rightarrow 3 \cdot 10^{-4}}
 }
 \examples{
 

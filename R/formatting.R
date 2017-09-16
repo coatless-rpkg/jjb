@@ -40,7 +40,7 @@ pad_number = function(x){
 #' Export Data in Scientific Notation to LaTeX 
 #' 
 #' Takes a vector of observations and converts them to have the
-#' scientific notation in LaTeX. E.g. \code{0.0003 => 3 \cdot 10^{-4}}
+#' scientific notation in LaTeX. E.g. \eqn{0.0003 \Rightarrow 3 \cdot 10^{-4}}
 #' @param x        A \code{numeric vector} to be formatted. 
 #' @param rounding A \code{integer} that indicates how many decimal places should exist.
 #' @param align    A \code{bool} that indicates whether phantom padding should be added to force column into alignment.
