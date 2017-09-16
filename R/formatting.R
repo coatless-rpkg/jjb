@@ -22,6 +22,7 @@
 #' @return A `character vector` that is padded to the length of the
 #' maximum entry.
 #' @author James Balamuta
+#' @export
 #' @examples 
 #' # Padding applied
 #' pad_number(8:10)
