@@ -4,10 +4,10 @@
 \alias{tint}
 \title{Tint an RGB value}
 \usage{
-tint(rgbval, tint_factor = 0.2)
+tint(rgb_value, tint_factor = 0.2)
 }
 \arguments{
-\item{rgbval}{A \code{vector} with length \eqn{3 \times 1}{3 x 1}.}
+\item{rgb_value}{A \code{vector} with length \eqn{3 \times 1}{3 x 1}.}
 
 \item{tint_factor}{A \code{double} that ranges between \eqn{[0, 1]}.}
 }
@@ -18,5 +18,5 @@ A \code{matrix} with dimensions \eqn{3 \times 1}{3 x 1}.
 The function tints or lightens an RGB value by adding white to the values.
 }
 \examples{
-tint(c(22,150,230), tint_factor = 0.5)
+tint(c(22, 150, 230), tint_factor = 0.5)
 }

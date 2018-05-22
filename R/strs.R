@@ -13,24 +13,35 @@
 # You should have received a copy of the GPL-3 License along with `balamuta`.
 # If not, see <https://opensource.org/licenses/GPL-3.0>.
 
-#' @title Character at Position i
-#' @description Returns the character at position i.
+#' Character at Position i
+#' 
+#' Returns the character at location i inside the string.
+#' 
 #' @param s A \code{string} to extract position from. 
 #' @param i A \code{int} between 1 and length. 
+#' 
 #' @return A \code{string} of length 1.
+#' 
 #' @author James J Balamuta
 #' @export
 #' @examples
 #' 
 #' s = "statistics"
-#' charAt(s,1)
-charAt = function(s,i){
+#' 
+#' # Single
+#' char_at(s, 1)
+#' 
+#' # Vectorized position
+#' char_at(s, c(2, 3))
+char_at = function(s, i){
   
   if(!is.character(s)){ stop("Must be a string")}
   
-  a = length(s)
+  a = nchar(s)
   
-  if(i > a) { stop("Index must within string range")}
+  if(any(i > a)) { stop("Index must within string range")}
   
-  substr(s,i,i)
+  sapply(i, 
+         FUN = function(position, s) { substr(s, position, position) }, 
+         s = s)
 }

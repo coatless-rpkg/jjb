@@ -13,93 +13,138 @@
 # You should have received a copy of the GPL-3 License along with `balamuta`.
 # If not, see <https://opensource.org/licenses/GPL-3.0>.
 
-#' @title Emulate ggplot2 default color palette
-#' @description Autogenerate a colors according to the ggplot selection mechanism. 
-#' @param n An \code{integer} indicating how many colors user wants.
-#' @return A \code{vector} containing \code{n} colors
+#' Emulate ggplot2 default color palette
+#'
+#' Autogenerate a colors according to the ggplot selection mechanism. 
+#' 
+#' @param n An `integer` indicating how many colors user wants.
+#' 
+#' @return A `vector` containing `n` colors
+#' 
 #' @author John Colby
 #' @export
+#' @details 
+#' This implementation is based off an answer given on StackOverflow by
+#' John Colby. 
 #' @examples
-#' ggColor(5)
-ggColor = function(n) {
-  hues = seq(15, 375, length=n+1)
-  hcl(h=hues, l=70, c=100)[1:n]
+#' 
+#' # Only 1 color
+#' gg_color(1)
+#' 
+#' # Five colors
+#' gg_color(5)
+#' @references 
+#' https://stackoverflow.com/questions/8197559/emulate-ggplot2-default-color-palette
+gg_color = function(n) {
+  hues = seq(15, 375, length = n + 1)
+  hcl(h = hues, l = 70, c = 100)[-(n + 1)]
 }
 
-#' @title Convert 0-255 to a Hex number
-#' @description This is a helper function for \link{rgb2hex}.
+#' Convert 0-255 to a Hex number
+#'
+#' This is a helper function for [`rgb_to_hex`].
 #' This function takes a single R, G, or B numeric value and converts it to hex.
-#' @param n An \code{int}
-#' @return A \code{string} of length 2. 
+#' 
+#' @param n An `int`
+#' 
+#' @return A `string` of length 2. 
 #' @export
 #' @examples
-#' toHex(22)
-toHex = function(n) {
-  if (is.nan(n) || is.whole(n)) return("00")
+#' int_to_hex(22)
+int_to_hex = function(n) {
   
-  n = max(0, min(n,255))
+  if (is.nan(n) || is.whole(n))
+    return("00")
+  
+  n = max(0, min(n, 255))
   s = "0123456789ABCDEF"
   
-  paste0(charAt(s,(n-n%%16)/16 + 1), charAt(s, n%%16 + 1))
+  paste0(char_at(s, (n - n %% 16) / 16 + 1), char_at(s, n %% 16 + 1))
 }
 
-#' @title Convert RGB Value to Hexadecimal
-#' @description This function converts an RGB value to the hexadecimal numbering system.
-#' @param R A \code{int} that is between 0 and 255 for the Red value.
-#' @param G A \code{int} that is between 0 and 255 for the Green value.
-#' @param B A \code{int} that is between 0 and 255 for the Blue value.
-#' @param pound A \code{bool} that indicates whether a pound sign should be prepended to the hexadecimal.
-#' @return A \code{string} containing the hexadecimal informatoin.
+#' Convert RGB Value to Hexadecimal
+#'
+#' This function converts an RGB value to the hexadecimal numbering system.
+#' 
+#' @param R     A `int` that is between 0 and 255 for the Red value.
+#' @param G     A `int` that is between 0 and 255 for the Green value.
+#' @param B     A `int` that is between 0 and 255 for the Blue value.
+#' @param pound A `bool` that indicates whether a pound sign should be
+#'              prepended to the hexadecimal.
+#'              
+#' @return A `string` containing the hexadecimal informatoin.
 #' @export
 #' @examples
 #' # Hexadecimal with pound sign
-#' rgb2hex(255,255,255)
+#' rgb_to_hex(255,255,255)
 #' 
 #' # Heaxadecimal without pound sign
-#' rgb2hex(255,255,255,FALSE)
-rgb2hex = function(R,G,B,pound=TRUE) {
+#' rgb_to_hex(255,255,255,FALSE)
+rgb_to_hex = function(R, G, B, pound = TRUE) {
   
-  paste0(if(pound){"#"}else{""},toHex(R),toHex(G),toHex(B))
+  paste0(if (pound) {
+    "#"
+  } else{
+    ""
+  }, int_to_hex(R), int_to_hex(G), int_to_hex(B))
   
 }
 
-#' @title Tint an RGB value
-#' @description The function tints or lightens an RGB value by adding white to the values.
-#' @param rgbval A \code{vector} with length \eqn{3 \times 1}{3 x 1}.
-#' @param tint_factor A \code{double} that ranges between \eqn{[0, 1]}.
-#' @return A \code{matrix} with dimensions \eqn{3 \times 1}{3 x 1}.
+#' Tint an RGB value
+#'
+#' The function tints or lightens an RGB value by adding white to the values.
+#' 
+#' @param rgb_value   A `vector` with length \eqn{3 \times 1}{3 x 1}.
+#' @param tint_factor A `double` that ranges between \eqn{[0, 1]}.
+#' 
+#' @return A `matrix` with dimensions \eqn{3 \times 1}{3 x 1}.
+#' 
 #' @export
 #' @examples
-#' tint(c(22,150,230), tint_factor = 0.5)
-tint = function(rgbval, tint_factor = 0.2){
+#' tint(c(22, 150, 230), tint_factor = 0.5)
+tint = function(rgb_value, tint_factor = 0.2) {
+  if (tint_factor > 1 ||
+      tint_factor < 0) {
+    stop("Invalid tint factor")
+  }
+  if (!is.vector(rgb_value) ||
+      length(rgb_value) != 3) {
+    stop("Invalid rgbval vector")
+  }
   
-  if(tint_factor > 1 || tint_factor < 0){ stop("Invalid tint factor")}
-  if(!is.vector(rgbval) || length(rgbval) != 3){ stop("Invalid rgbval vector")}
+  rgb_value[1] = rgb_value[1] + (255 - rgb_value[1]) * tint_factor
+  rgb_value[2] = rgb_value[2] + (255 - rgb_value[2]) * tint_factor
+  rgb_value[3] = rgb_value[3] + (255 - rgb_value[3]) * tint_factor
   
-  rgbval[1] = rgbval[1] + (255 - rgbval[1]) * tint_factor
-  rgbval[2] = rgbval[2] + (255 - rgbval[2]) * tint_factor
-  rgbval[3] = rgbval[3] + (255 - rgbval[3]) * tint_factor
-  
-  rgbval
+  rgb_value
 }
 
-#' @title Shade an RGB value
-#' @description The function shades or darkens an RGB value by adding black to the values.
-#' @param rgbval A \code{vector} with length \eqn{3 \times 1}{3 x 1}.
-#' @param shade_factor A \code{double} that ranges between \eqn{[0, 1]}.
-#' @return A \code{matrix} with dimensions \eqn{3 \times 1}{3 x 1}.
+#' Shade an RGB value
+#'
+#' The function shades or darkens an RGB value by adding black to the values.
+#' 
+#' @param rgb_value    A `vector` with length \eqn{3 \times 1}{3 x 1}.
+#' @param shade_factor A `double` that ranges between \eqn{[0, 1]}.
+#' 
+#' @return A `matrix` with dimensions \eqn{3 \times 1}{3 x 1}.
+#' 
 #' @export
 #' @examples
-#' shade(c(22,150,230), shade_factor = 0.5)
-shade = function(rgbval, shade_factor = 0.1){
+#' shade(c(22, 150, 230), shade_factor = 0.5)
+shade = function(rgb_value, shade_factor = 0.1) {
+  if (shade_factor > 1 ||
+      shade_factor < 0) {
+    stop("Invalid shade factor")
+  }
+  if (!is.vector(rgb_value) ||
+      length(rgb_value) != 3) {
+    stop("Invalid rgbval vector")
+  }
   
-  if(shade_factor > 1 || shade_factor < 0){ stop("Invalid shade factor")}
-  if(!is.vector(rgbval) || length(rgbval) != 3){ stop("Invalid rgbval vector")}
   
+  rgb_value[1] = rgb_value[1] * (1 - shade_factor)
+  rgb_value[2] = rgb_value[2] * (1 - shade_factor)
+  rgb_value[3] = rgb_value[3] * (1 - shade_factor)
   
-  rgbval[1] = rgbval[1] * (1 - shade_factor)
-  rgbval[2] = rgbval[2] * (1 - shade_factor)
-  rgbval[3] = rgbval[3] * (1 - shade_factor)
-  
-  rgbval
+  rgb_value
 }
