@@ -10,7 +10,7 @@
 # WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 #
-# You should have received a copy of the GPL-3 License along with `balamuta`.
+# You should have received a copy of the GPL-3 License along with `bmisc`.
 # If not, see <https://opensource.org/licenses/GPL-3.0>.
 
 #' Emulate ggplot2 default color palette
@@ -42,8 +42,8 @@ gg_color = function(n) {
 
 #' Convert 0-255 to a Hex number
 #'
-#' This is a helper function for [`rgb_to_hex`].
-#' This function takes a single R, G, or B numeric value and converts it to hex.
+#' This is a helper function for [`rgb_to_hex`]. This function takes a
+#' single R, G, or B numeric value and converts it to hex.
 #' 
 #' @param n An `int`
 #' 
@@ -53,7 +53,7 @@ gg_color = function(n) {
 #' int_to_hex(22)
 int_to_hex = function(n) {
   
-  if (is.nan(n) || is.whole(n))
+  if (is.nan(n) || is_whole(n))
     return("00")
   
   n = max(0, min(n, 255))
