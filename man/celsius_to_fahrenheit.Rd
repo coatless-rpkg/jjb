@@ -15,3 +15,9 @@ A \code{numeric} vector.
 \description{
 Converts temperature recorded in Celsius to Fahrenheit.
 }
+\examples{
+
+celsius_to_fahrenheit(33)
+
+celsius_to_fahrenheit(0)
+}

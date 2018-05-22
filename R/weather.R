@@ -22,6 +22,11 @@
 #' @param t_celsius Temperature recorded in Celsius.
 #' @return A `numeric` vector.
 #' @export
+#' @examples 
+#' 
+#' celsius_to_fahrenheit(33)
+#' 
+#' celsius_to_fahrenheit(0)
 celsius_to_fahrenheit = function(t_celsius) {
   stopifnot(is.numeric(t_celsius))
   
@@ -35,6 +40,12 @@ celsius_to_fahrenheit = function(t_celsius) {
 #' @param t_fahrenheit Temperature recorded in Fahrenheit.
 #' @return A `numeric` vector.
 #' @export
+#' 
+#' @examples 
+#' 
+#' fahrenheit_to_celsius(92)
+#' 
+#' fahrenheit_to_celsius(32)
 fahrenheit_to_celsius = function(t_fahrenheit) {
   stopifnot(is.numeric(t_fahrenheit))
   
@@ -49,6 +60,11 @@ fahrenheit_to_celsius = function(t_fahrenheit) {
 #' @param t_kelvin Temperature recorded in Kelvin.
 #' @return A `numeric` vector.
 #' @export
+#' 
+#' @examples 
+#' kelvin_to_celsius(92)
+#' 
+#' kelvin_to_celsius(32)
 kelvin_to_celsius = function(t_kelvin) {
   stopifnot(is.numeric(t_kelvin))
   
@@ -60,8 +76,13 @@ kelvin_to_celsius = function(t_kelvin) {
 #' Converts temperature recorded in Celsius to Kelvin.
 #'
 #' @param t_celsius Temperature recorded in Celsius.
+#' 
 #' @return A `numeric` vector.
 #' @export
+#' @examples 
+#' celsius_to_kelvin(92)
+#' 
+#' celsius_to_kelvin(32)
 celsius_to_kelvin = function(t_celsius) {
   stopifnot(is.numeric(t_celsius))
   
@@ -74,8 +95,13 @@ celsius_to_kelvin = function(t_celsius) {
 #' Converts temperature recorded in Fahrenheit to Kelvin.
 #'
 #' @param t_fahrenheit Temperature recorded in Fahrenheit.
+#' 
 #' @return A `numeric` vector.
 #' @export
+#' @examples 
+#' fahrenheit_to_kelvin(92)
+#' 
+#' fahrenheit_to_kelvin(32)
 fahrenheit_to_kelvin = function(t_fahrenheit) {
   stopifnot(is.numeric(t_fahrenheit))
   
@@ -87,8 +113,13 @@ fahrenheit_to_kelvin = function(t_fahrenheit) {
 #' Converts temperature recorded in Celsius to Kelvin.
 #'
 #' @param t_kelvin Temperature recorded in Kelvin.
+#' 
 #' @return A `numeric` vector.
 #' @export
+#' @examples 
+#' kelvin_to_fahrenheit(92)
+#' 
+#' kelvin_to_fahrenheit(32)
 kelvin_to_fahrenheit = function(t_kelvin) {
   stopifnot(is.numeric(t_kelvin))
   

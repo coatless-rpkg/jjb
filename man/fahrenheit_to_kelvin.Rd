@@ -15,3 +15,8 @@ A \code{numeric} vector.
 \description{
 Converts temperature recorded in Fahrenheit to Kelvin.
 }
+\examples{
+fahrenheit_to_kelvin(92)
+
+fahrenheit_to_kelvin(32)
+}

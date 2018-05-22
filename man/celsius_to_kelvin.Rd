@@ -15,3 +15,8 @@ A \code{numeric} vector.
 \description{
 Converts temperature recorded in Celsius to Kelvin.
 }
+\examples{
+celsius_to_kelvin(92)
+
+celsius_to_kelvin(32)
+}
