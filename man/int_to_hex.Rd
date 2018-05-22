@@ -13,8 +13,8 @@ int_to_hex(n)
 A \code{string} of length 2.
 }
 \description{
-This is a helper function for \code{\link{rgb_to_hex}}.
-This function takes a single R, G, or B numeric value and converts it to hex.
+This is a helper function for \code{\link{rgb_to_hex}}. This function takes a
+single R, G, or B numeric value and converts it to hex.
 }
 \examples{
 int_to_hex(22)
