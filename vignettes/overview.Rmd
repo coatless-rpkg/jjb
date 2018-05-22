@@ -1,10 +1,10 @@
 ---
-title: "An Overview of Miscellaneousness"
+title: "An Overview of `bmisc`: Balamuta Miscellaneousness"
 author: "James Balamuta"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{An Overview of Miscellaneousness}
+  %\VignetteIndexEntry{An Overview of bmisc: Balamuta Miscellaneousness}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -20,18 +20,18 @@ GitHub:
 
 ```{r eval = FALSE}
 # install.packages("devtools")
-devtools::install_github("coatless/balamuta@*release")
-install.packages("balamuta")
+devtools::install_github("coatless/bmisc@*release")
+install.packages("bmisc")
 ```
 
 Then load it via:
 
 ```{r}
-library("balamuta")
+library("bmisc")
 ```
 
 You may wish at times to use functions within this package that collide with similarly named functions in other packages. To do so, please prefix function 
-calls by `balamuta::` or `balamuta:::` if the function is not exported.
+calls by `bmisc::` or `bmisc:::` if the function is not exported.
 
 # Utilities
 
