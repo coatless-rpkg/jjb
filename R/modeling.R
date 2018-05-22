@@ -61,7 +61,7 @@ acc = function(y, yhat) {
 #' # Compute
 #' o = mse(y,yhat)
 mse = function(y, yhat){
-  mean( (y - yhat) ^ 2)
+  mean((y - yhat) ^ 2)
 }
 
 #' Root Mean Squared Error (RMSE)
@@ -87,7 +87,7 @@ mse = function(y, yhat){
 #' # Compute
 #' o = mse(y,yhat)
 rmse = function(y, yhat) {
-  sqrt(mse(y,yhat))
+  sqrt(mse(y, yhat))
 }
 
 
@@ -118,14 +118,19 @@ rmse = function(y, yhat) {
 #' o = sapply(d,floor_and_cap)
 floor_and_cap = function(x, probs=c(.025,0.975)){
   
-  if(length(probs) != 2){stop("Must provide two values for `probs`: one floor and one cap.")}
-  if(probs[1] > probs[2]){stop("The first element in `probs` must be less than the second element.")}
+  if (length(probs) != 2) {
+    stop("`probs` must provide two values: one floor and one cap.")
+  }
+  
+  if (probs[1] > probs[2]) {
+    stop("`probs` must have the first probability be less than the second probability.")
+  }
   
   
-  vals = quantile(x, probs=probs, na.rm=TRUE)
+  vals = quantile(x, probs = probs, na.rm = TRUE)
   
-  x = ifelse(x<vals[1],vals[1],x)
-  x = ifelse(x>vals[2],vals[2],x)
+  x = ifelse(x < vals[1], vals[1], x)
+  x = ifelse(x > vals[2], vals[2], x)
   
   x
 }
@@ -159,17 +164,25 @@ floor_and_cap = function(x, probs=c(.025,0.975)){
 #' d[,c(1,3)] = convert_cols(d[,c(1,3)],c("f","f"))
 convert_cols = function(d,cast){
   
-  if(!is.data.frame(d)){stop("`d` must be a `data.frame`")}
-  if(ncol(d)!=length(cast)){stop("Number of cast must match number of `d` columns ")}
+  if (!is.data.frame(d)) {
+    stop("`d` must be a `data.frame`")
+  }
   
-  d2 = lapply(1:ncol(d),
-              FUN = function(i){
-                FCALL = switch(cast[i],
-                               c = as.character,
-                               n = as.numeric,
-                               f = as.factor);
-                FCALL(d[,i])
-              })
+  if (ncol(d) != length(cast)) {
+    stop("Number of cast must match number of `d` columns ")
+  }
+  
+  d2 = lapply(
+    1:ncol(d),
+    FUN = function(i) {
+      FCALL = switch(cast[i],
+                     c = as.character,
+                     n = as.numeric,
+                     f = as.factor)
+      
+      FCALL(d[, i])
+    }
+  )
   
   names(d2) = colnames(d)
   
