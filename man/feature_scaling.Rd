@@ -97,6 +97,8 @@ To move from the normalized value \eqn{x_{norm}} to the original value \eqn{x} u
 }
 
 \examples{
+
+# Rescaling Features
 temperatures = c(94.2, 88.1, 32, 0)
 
 temp_min = min(temperatures)
@@ -106,7 +108,8 @@ temperatures_norm   = feature_rescale(temp_min, temp_max)
 temperatures_denorm = feature_derescale(temperatures_norm, temp_min, temp_max)
 
 all.equal(temperatures, temperatures_denorm)
-
+ 
+# Norming Features
 x = 1:10
 
 x_norm = sqrt(sum(x^2))
@@ -115,6 +118,8 @@ x_norm_std = feature_norm(x, x_norm)
 
 x_recover = feature_denorm(x_norm_std, x_norm)
 all.equal(x, x_recover)
+
+# Standardizing Features
 x      = 1:10
 
 x_mean = mean(x)

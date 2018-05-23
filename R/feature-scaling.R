@@ -69,6 +69,8 @@
 #' @rdname feature_scaling
 #' @export
 #' @examples 
+#' 
+#' # Rescaling Features
 #' temperatures = c(94.2, 88.1, 32, 0)
 #'
 #' temp_min = min(temperatures)
@@ -115,8 +117,9 @@ feature_norm = function(x, x_norm = NULL) {
 #' @param x_norm_std Euclidean vector of normalized `x` values.
 #' @rdname feature_scaling
 #' @export
-#' @examples 
-#' 
+#' @examples
+#'  
+#' # Norming Features
 #' x = 1:10
 #' 
 #' x_norm = sqrt(sum(x^2))
@@ -154,6 +157,8 @@ feature_standardize = function(x, x_mean = NULL, x_sd = NULL) {
 #' @rdname feature_scaling
 #' @export
 #' @examples 
+#' 
+#' # Standardizing Features
 #' x      = 1:10
 #' 
 #' x_mean = mean(x)
