@@ -17,13 +17,15 @@
 #' Natural Graphics Driver for Operating System
 #' 
 #' Provides the default operating system graphics utility
-#' @seealso \code{\link{is.rstudio}}
-#' @return A \code{string} that is either:
-#' \describe{
-#' \item{\code{"quartz"}}{if on MacOS}
-#' \item{\code{"windows"}}{if on Windows}
-#' \item{\code{"x11"}}{if on Linux or Solaris}
-#' }
+#' 
+#' @return A `string` that is either:
+#' 
+#' - `"quartz"`: if on MacOS
+#' - `"windows"`: if on Windows
+#' - `"x11"`: if on Linux or Solaris
+#' 
+#' @seealso [is_rstudio]
+#' 
 #' @author James Joseph Balamuta
 #' @export
 #' @examples 
@@ -38,35 +40,41 @@ get_graphic_driver = function(){
 }
 
 
-#' @title Is R Open in RStudio?
-#' @description 
+#' Is R Open in RStudio?
+#' 
 #' Detects whether R is open in RStudio. 
+#' 
 #' @return 
-#' A \code{logical} value that indicates whether R is open in RStudio.
+#' A `logical` value that indicates whether R is open in RStudio.
 #' @author JJB
 #' @export
 #' @examples
-#' is.rstudio()
-is.rstudio = function(){
+#' is_rstudio()
+is_rstudio = function(){
   .Platform$GUI == "RStudio"
 }
 
-#' @title Change Default Graphing Device from RStudio
-#' @description 
-#' Checks to see if the user is in RStudio. If so, then it changes the device to a popup window. 
-#' @param ext A \code{logical} indicating whether the graph should be done externally or internally in RStudio.
+#' Change Default Graphing Device from RStudio
+#' 
+#' Checks to see if the user is in RStudio. If so, then it changes the device
+#' to a popup window. 
+#' 
+#' @param ext A `logical` indicating whether the graph should be done externally
+#'            or internally in RStudio.
 #' @details 
-#' Depending on the operating system, the default drivers attempted to be used are:
+#' Depending on the operating system, the default drivers attempted to be
+#' used are:
 #' 
-#' OS X: quartz()
+#' - OS X: `quartz()`
+#' - Linux: `x11()`
+#' - Windows: `windows()`
 #' 
-#' Linux: x11()
-#' 
-#' Windows: windows()
-#' 
-#' Note, this setting is not permanent. Thus, the behavioral change will last until the end of the session. 
+#' Note, this setting is not permanent. Thus, the behavioral change will last
+#' until the end of the session. 
 #'
-#' Also, the active graphing environment will be killed. As a result, any graphs that are open will be deleted. You will have to regraph them. 
+#' Also, the active graphing environment will be killed. As a result, any graphs
+#' that are open will be deleted. You will have to regraph them. 
+#' 
 #' @author JJB
 #' @export
 #' @examples
@@ -78,12 +86,12 @@ is.rstudio = function(){
 #' external_graphs(F)
 #' }
 external_graphs = function(ext = TRUE){
-  if( is.rstudio() ){
+  if( is_rstudio() ){
     if(isTRUE(ext)){
       a = get_graphic_driver()
       options("device" = a)
     } else{
-      options("device"="RStudioGD")
+      options("device" = "RStudioGD")
     }
     
     # Kill open graphic devices

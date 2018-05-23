@@ -8,10 +8,10 @@ get_graphic_driver()
 }
 \value{
 A \code{string} that is either:
-\describe{
-\item{\code{"quartz"}}{if on MacOS}
-\item{\code{"windows"}}{if on Windows}
-\item{\code{"x11"}}{if on Linux or Solaris}
+\itemize{
+\item \code{"quartz"}: if on MacOS
+\item \code{"windows"}: if on Windows
+\item \code{"x11"}: if on Linux or Solaris
 }
 }
 \description{
@@ -22,7 +22,7 @@ Provides the default operating system graphics utility
 get_graphic_driver()
 }
 \seealso{
-\code{\link{is.rstudio}}
+\link{is_rstudio}
 }
 \author{
 James Joseph Balamuta

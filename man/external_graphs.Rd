@@ -7,23 +7,27 @@
 external_graphs(ext = TRUE)
 }
 \arguments{
-\item{ext}{A \code{logical} indicating whether the graph should be done externally or internally in RStudio.}
+\item{ext}{A \code{logical} indicating whether the graph should be done externally
+or internally in RStudio.}
 }
 \description{
-Checks to see if the user is in RStudio. If so, then it changes the device to a popup window.
+Checks to see if the user is in RStudio. If so, then it changes the device
+to a popup window.
 }
 \details{
-Depending on the operating system, the default drivers attempted to be used are:
+Depending on the operating system, the default drivers attempted to be
+used are:
+\itemize{
+\item OS X: \code{quartz()}
+\item Linux: \code{x11()}
+\item Windows: \code{windows()}
+}
 
-OS X: quartz()
+Note, this setting is not permanent. Thus, the behavioral change will last
+until the end of the session.
 
-Linux: x11()
-
-Windows: windows()
-
-Note, this setting is not permanent. Thus, the behavioral change will last until the end of the session.
-
-Also, the active graphing environment will be killed. As a result, any graphs that are open will be deleted. You will have to regraph them.
+Also, the active graphing environment will be killed. As a result, any graphs
+that are open will be deleted. You will have to regraph them.
 }
 \examples{
 \dontrun{
