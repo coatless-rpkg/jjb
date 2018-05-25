@@ -13,35 +13,35 @@
 # You should have received a copy of the GPL-3 License along with `bmisc`.
 # If not, see <https://opensource.org/licenses/GPL-3.0>.
 
-#' Character at Position i
+#' Character at Position _i_
 #' 
-#' Returns the character at location i inside the string.
+#' Returns the character at location _i_ inside the string.
 #' 
-#' @param s A \code{string} to extract position from. 
-#' @param i A \code{int} between 1 and length. 
+#' @param x     A `character vector` to extract position from. 
+#' @param index An `integer` between 1 and length _n_. 
 #' 
-#' @return A \code{string} of length 1.
+#' @return A `character vector` of length `index`.
 #' 
 #' @author James J Balamuta
 #' @export
 #' @examples
-#' 
+#' # Example string
 #' s = "statistics"
 #' 
-#' # Single
+#' # Single character
 #' char_at(s, 1)
 #' 
 #' # Vectorized position
 #' char_at(s, c(2, 3))
-char_at = function(s, i){
+char_at = function(x, index){
   
-  if(!is.character(s)){ stop("Must be a string")}
+  if(!is.character(x)){ stop("Must be a string")}
   
-  a = nchar(s)
+  a = nchar(x)
   
-  if(any(i > a)) { stop("Index must within string range")}
+  if(any(index > a)) { stop("Must have the values of `i` within string range")}
   
-  sapply(i, 
+  sapply(index, 
          FUN = function(position, s) { substr(s, position, position) }, 
-         s = s)
+         s = x)
 }

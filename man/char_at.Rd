@@ -2,26 +2,26 @@
 % Please edit documentation in R/strs.R
 \name{char_at}
 \alias{char_at}
-\title{Character at Position i}
+\title{Character at Position \emph{i}}
 \usage{
-char_at(s, i)
+char_at(x, index)
 }
 \arguments{
-\item{s}{A \code{string} to extract position from.}
+\item{x}{A \code{character vector} to extract position from.}
 
-\item{i}{A \code{int} between 1 and length.}
+\item{index}{An \code{integer} between 1 and length \emph{n}.}
 }
 \value{
-A \code{string} of length 1.
+A \code{character vector} of length \code{index}.
 }
 \description{
-Returns the character at location i inside the string.
+Returns the character at location \emph{i} inside the string.
 }
 \examples{
-
+# Example string
 s = "statistics"
 
-# Single
+# Single character
 char_at(s, 1)
 
 # Vectorized position
