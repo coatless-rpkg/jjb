@@ -1,16 +1,20 @@
-[![Linux Build Status](https://travis-ci.org/coatless/bmisc.svg?branch=master)](https://travis-ci.org/coatless/bmisc)[![CRAN RStudio mirror downloads](http://cranlogs.r-pkg.org/badges/bmisc)](http://www.r-pkg.org/pkg/bmisc)[![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/bmisc)](http://cran.r-project.org/package=bmisc)
+## `bmisc`
 
-# `bmisc` R Package
+[![Linux Build Status](https://travis-ci.org/coatless/bmisc.svg?branch=master)](https://travis-ci.org/coatless/bmisc)
+[![CRAN RStudio mirror downloads](http://cranlogs.r-pkg.org/badges/bmisc)](http://www.r-pkg.org/pkg/bmisc)
+[![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/bmisc)](http://cran.r-project.org/package=bmisc)
 
 The goal of `bmisc` is to provide tools frequently used in analyses. As a 
 result, the package contains a large amount of functions I use in day to day
 analyses.
 
-# Install Instructions (All platforms)
+### Installation
 
-To install the `bmisc` package, there are two options: CRAN (stable) or GitHub (Developmental)
+The `bmisc` package is available on both CRAN and GitHub. The CRAN version is
+considered stable while the GitHub version is in a state of development and 
+may break. 
 
-The installation process with CRAN is the simplest
+You can install the stable version of the `bmisc` package with:
 
 ```r
 install.packages("bmisc")
@@ -27,7 +31,13 @@ install.packages("devtools")
 devtools::install_github("coatless/bmisc")
 ```
 
-# Licensing
+### Usage
+
+```r
+library("bmisc")
+```
+
+### Licensing
 
 GPL-3
 
