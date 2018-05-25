@@ -14,10 +14,6 @@ Description: Sets of common functions used for manipulating colors,
     interacting with RStudio, modeling, formating, and more.
 Imports:
     ggplot2 (>= 2.1.0)
-Suggests:
-    testthat,
-    knitr,
-    rmarkdown
 RoxygenNote: 6.0.1
 VignetteBuilder: knitr
 Roxygen: list(markdown = TRUE)
