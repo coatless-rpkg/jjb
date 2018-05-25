@@ -12,6 +12,3 @@
 #
 # You should have received a copy of the GPL-3 License along with `bmisc`.
 # If not, see <https://opensource.org/licenses/GPL-3.0>.
-
-#' @importFrom ggplot2 autoplot ggplot geom_line theme_bw labs aes
-NULL
