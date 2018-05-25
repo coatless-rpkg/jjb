@@ -17,7 +17,8 @@ circle_matrix(m, n, x.center, y.center, r, f = 1)
 
 \item{r}{A \code{vector} of integers denoting the different circle radii.}
 
-\item{f}{A \code{vector} of values that specify what the inside of the circles should be.}
+\item{f}{A \code{vector} of values that specify what the inside of the
+circles should be.}
 }
 \value{
 A \code{matrix} with circles imprinted within its dimensions.
@@ -28,13 +29,13 @@ Takes a default matrix and embeds circles within the matrix.
 \examples{
 
 # Generate a basic circle matrix
-circle_matrix(10,10, 3, 4, 2)
+circle_matrix(10, 10, 3, 4, 2)
 
 # Generate two circles within the matrix
-circle_matrix(10,20, c(3,6), c(4,6), c(2,2))
+circle_matrix(10, 20, c(3,6), c(4,6), c(2,2))
 
 # Different fills
-circle_matrix(10,20, c(3,6), c(4,6), c(2,2), f = c(1,2))
+circle_matrix(10, 20, c(3,6), c(4,6), c(2,2), f = c(1,2))
 }
 \author{
 James J Balamuta

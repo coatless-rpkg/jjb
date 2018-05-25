@@ -13,10 +13,14 @@
 # You should have received a copy of the GPL-3 License along with `bmisc`.
 # If not, see <https://opensource.org/licenses/GPL-3.0>.
 
-#' @title Obtain the Trace of a Square Matrix
-#' @description Calculates and returns the trace of a square matrix.
+#' Obtain the Trace of a Square Matrix
+#' 
+#' Calculates and returns the trace of a square matrix.
+#' 
 #' @param x A \code{matrix} that is square e.g. \eqn{N \times N}{N x N}
+#' 
 #' @return A \code{matrix} with circles imprinted within its dimensions.
+#' 
 #' @author James J Balamuta
 #' @export
 #' @examples 
@@ -28,27 +32,32 @@ tr = function(x){
   sum(diag(x))
 }
 
-#' @title Create a circle pattern within a matrix
-#' @description Takes a default matrix and embeds circles within the matrix.
-#' @param m A \code{int} that is the number of rows of the matrix 
-#' @param n A \code{int} that is the number of the columns of the matrix.
-#' @param x.center A \code{vector} of x coordinate center position of the circle.
-#' @param y.center A \code{vector} of y coordinate center position of the circle.
-#' @param r A \code{vector} of integers denoting the different circle radii.
-#' @param f A \code{vector} of values that specify what the inside of the circles should be.
-#' @return A \code{matrix} with circles imprinted within its dimensions.
+#' Create a circle pattern within a matrix
+#' 
+#' Takes a default matrix and embeds circles within the matrix.
+#' 
+#' @param m        A `int` that is the number of rows of the matrix 
+#' @param n        A `int` that is the number of the columns of the matrix.
+#' @param x.center A `vector` of x coordinate center position of the circle.
+#' @param y.center A `vector` of y coordinate center position of the circle.
+#' @param r        A `vector` of integers denoting the different circle radii.
+#' @param f        A `vector` of values that specify what the inside of the
+#'                 circles should be.
+#' 
+#' @return A `matrix` with circles imprinted within its dimensions.
+#' 
 #' @author James J Balamuta
 #' @export
 #' @examples 
 #' 
 #' # Generate a basic circle matrix
-#' circle_matrix(10,10, 3, 4, 2)
+#' circle_matrix(10, 10, 3, 4, 2)
 #' 
 #' # Generate two circles within the matrix
-#' circle_matrix(10,20, c(3,6), c(4,6), c(2,2))
+#' circle_matrix(10, 20, c(3,6), c(4,6), c(2,2))
 #' 
 #' # Different fills
-#' circle_matrix(10,20, c(3,6), c(4,6), c(2,2), f = c(1,2))
+#' circle_matrix(10, 20, c(3,6), c(4,6), c(2,2), f = c(1,2))
 circle_matrix = function(m, n, x.center, y.center, r, f = 1){
   
   p = length(y.center)
