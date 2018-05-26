@@ -12,11 +12,12 @@ rmse(y, yhat)
 \item{yhat}{A \code{vector} of predicted \eqn{\hat{y}}{y hat} values.}
 }
 \value{
-A \code{double} indicating the RMSE
+The RMSE in \code{numeric} form
 }
 \description{
-Calculates the root mean square of the model by taking the square root of mean of the
-sum of squares between the truth, \eqn{y}, and the predicted, \eqn{\hat{y}}{y hat} at each observation \eqn{i}.
+Calculates the root mean square of the model by taking the square root of
+mean of the sum of squares between the truth, \eqn{y}, and the predicted,
+\eqn{\hat{y}}{y_hat} at each observation \eqn{i}.
 }
 \details{
 The formula for RMSE is:
@@ -30,8 +31,8 @@ set.seed(100)
 n = 1e2
 
 y = rnorm(n)
-yhat = rnorm(n,0.5)
+yhat = rnorm(n, 0.5)
 
 # Compute
-o = mse(y,yhat)
+o = mse(y, yhat)
 }

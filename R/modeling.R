@@ -13,14 +13,16 @@
 # You should have received a copy of the GPL-3 License along with `bmisc`.
 # If not, see <https://opensource.org/licenses/GPL-3.0>.
 
-#' Accuracy of the model
+#' Accuracy of the Model
 #' 
 #' Calculates the accuracy of the model by taking the mean of the number of times
 #' the truth, \eqn{y}, equals the predicted, \eqn{\hat{y}}{y hat}.
 #' 
-#' @param y    A \code{vector} of the true \eqn{y} values
-#' @param yhat A \code{vector} of predicted \eqn{\hat{y}}{y hat} values. 
-#' @return A \code{double} indicating the accuracy of the classification
+#' @param y    A `vector` of the true \eqn{y} values
+#' @param yhat A `vector` of predicted \eqn{\hat{y}}{y hat} values. 
+#' 
+#' @return The accuracy of the classification in `numeric` form.
+#' 
 #' @export
 #' @examples 
 #' # Set seed for reproducibility
@@ -33,7 +35,7 @@
 #' yhat = round(runif(n))
 #' 
 #' # Compute
-#' o = acc(y,yhat)
+#' o = acc(y, yhat)
 acc = function(y, yhat) {
   mean(y == yhat)
 }
@@ -41,12 +43,17 @@ acc = function(y, yhat) {
 #' Mean Squared Error (MSE)
 #' 
 #' Calculates the mean square of the model by taking the mean of the
-#' sum of squares between the truth, \eqn{y}, and the predicted, \eqn{\hat{y}}{y hat} at each observation \eqn{i}.
+#' sum of squares between the truth, \eqn{y}, and the predicted, \eqn{\hat{y}}{y hat}
+#' at each observation \eqn{i}.
+#' 
 #' @inheritParams acc
+#' 
+#' @return The MSE in `numeric` form.
+#' 
 #' @details 
 #' The equation for MSE is:
 #' \deqn{\frac{1}{n}\sum\limits_{i = 1}^n {{{\left( {{y_i} - {{\hat y}_i}} \right)}^2}}}{mean((y-yhat)^2)}
-#' @return A \code{double} indicating the MSE
+#'  
 #' @export
 #' @examples 
 #' # Set seed for reproducibility
@@ -56,23 +63,28 @@ acc = function(y, yhat) {
 #' n = 1e2
 #' 
 #' y = rnorm(n)
-#' yhat = rnorm(n,0.5)
+#' yhat = rnorm(n, 0.5)
 #' 
 #' # Compute
-#' o = mse(y,yhat)
-mse = function(y, yhat){
+#' o = mse(y, yhat)
+mse = function(y, yhat) {
   mean((y - yhat) ^ 2)
 }
 
 #' Root Mean Squared Error (RMSE)
 #' 
-#' Calculates the root mean square of the model by taking the square root of mean of the
-#' sum of squares between the truth, \eqn{y}, and the predicted, \eqn{\hat{y}}{y hat} at each observation \eqn{i}.
+#' Calculates the root mean square of the model by taking the square root of 
+#' mean of the sum of squares between the truth, \eqn{y}, and the predicted,
+#'  \eqn{\hat{y}}{y_hat} at each observation \eqn{i}.
+#'  
 #' @inheritParams acc
+#' 
+#' @return The RMSE in `numeric` form
+#' 
 #' @details 
 #' The formula for RMSE is:
 #' \deqn{\sqrt {\frac{1}{n}\sum\limits_{i = 1}^n {{{\left( {{y_i} - {{\hat y}_i}} \right)}^2}} } }{sqrt(mean((y-yhat)^2))}
-#' @return A \code{double} indicating the RMSE
+#' 
 #' @export
 #' @examples 
 #' # Set seed for reproducibility
@@ -82,22 +94,28 @@ mse = function(y, yhat){
 #' n = 1e2
 #' 
 #' y = rnorm(n)
-#' yhat = rnorm(n,0.5)
+#' yhat = rnorm(n, 0.5)
 #' 
 #' # Compute
-#' o = mse(y,yhat)
+#' o = mse(y, yhat)
 rmse = function(y, yhat) {
   sqrt(mse(y, yhat))
 }
 
 
 
-#' @title Floor and Cap a dataset
-#' @description Floors and Caps a numeric variable.
-#' @param x      A \code{vector} that has length \eqn{N}.
-#' @param probs  A \code{vector} containing two values between 0 and 1, with the first being less than the second.
-#' @return A \code{vector} with the values floored and capped. 
-#' @author James J Balamuta
+#' Floor and Cap a Numeric Variable
+#'
+#' Determine the floor and cap of a numeric variable by taking quantiles.
+#' Using the quantiles, values in the data found to be _lower_ or _higher_ than
+#' the floor or cap are replaced.
+#' 
+#' @param x      A `vector` that has length \eqn{N}.
+#' @param probs  A `vector` containing two values between 0 and 1, with the
+#'               first being less than the second.
+#'               
+#' @return A `vector` with the values floored and capped. 
+#' 
 #' @export
 #' @examples 
 #' 
@@ -106,17 +124,17 @@ rmse = function(y, yhat) {
 #' 
 #' x = rnorm(n)
 #' 
-#' x[n-1] = -99999
+#' x[n - 1] = -99999
 #' x[n] = 10000
 #' 
 #' y = floor_and_cap(x)
 #' 
 #' # Dataset example
 #' 
-#' d = data.frame(x,y=rnorm(n))
+#' d = data.frame(x, y = rnorm(n))
 #' 
-#' o = sapply(d,floor_and_cap)
-floor_and_cap = function(x, probs=c(.025,0.975)){
+#' o = sapply(d, floor_and_cap)
+floor_and_cap = function(x, probs = c(.025, 0.975)) {
   
   if (length(probs) != 2) {
     stop("`probs` must provide two values: one floor and one cap.")
@@ -135,16 +153,17 @@ floor_and_cap = function(x, probs=c(.025,0.975)){
   x
 }
 
-
-
-#' Convert Multiple Columns of a data.frame
+#' Convert Multiple Columns of a `data.frame`
 #'  
-#' All at once conversion of a data.frame from current column types to alternates.
+#' All at once conversion of a `data.frame` from current column types to 
+#' alternates.
 #' 
-#' @param d    A \code{data.frame} that needs to have specific columns converted.
-#' @param cast A \code{string vector} containing either \code{"n"} (numeric), \code{"c"} (character), or \code{"f"} (factor).
-#' @return A \code{data.frame} with converted column types.
-#' @author James J Balamuta
+#' @param d    A `data.frame` that needs to have specific columns converted.
+#' @param cast A `string vector` containing either:
+#'             `"n"` (numeric), `"c"` (character), or `"f"` (factor).
+#'             
+#' @return A `data.frame` with converted column types.
+#' 
 #' @export
 #' @examples 
 #' 
@@ -154,36 +173,39 @@ floor_and_cap = function(x, probs=c(.025,0.975)){
 #' sr = sample(letters, n, replace = TRUE)
 #' num = rnorm(n)
 #' 
-#' d = data.frame(x=st, y=num, z = sr, stringsAsFactors = FALSE)
+#' d = data.frame(x = st, y = num, z = sr, stringsAsFactors = FALSE)
 #' 
 #' # Convert all columns
 #' 
-#' o = convert_cols(d,c("f","c","f"))
+#' o = convert_cols(d,c("f", "c", "f"))
 #' 
 #' # Convert a subset
-#' d[,c(1,3)] = convert_cols(d[,c(1,3)],c("f","f"))
-convert_cols = function(d,cast){
+#' d[, c(1, 3)] = convert_cols(d[, c(1, 3)], c("f", "f"))
+convert_cols = function(d, cast) {
   
   if (!is.data.frame(d)) {
     stop("`d` must be a `data.frame`")
   }
   
   if (ncol(d) != length(cast)) {
-    stop("Number of cast must match number of `d` columns ")
+    stop("Number of cast must match number of `d` columns")
   }
   
   d2 = lapply(
-    1:ncol(d),
-    FUN = function(i) {
+    seq_len(ncol(d)),
+    FUN = function(i, d, cast) {
       FCALL = switch(cast[i],
                      c = as.character,
                      n = as.numeric,
                      f = as.factor)
       
       FCALL(d[, i])
-    }
+    },
+    d = d,
+    cast = cast
   )
   
+  # Update naming
   names(d2) = colnames(d)
   
   # Reset as data.frame and cast

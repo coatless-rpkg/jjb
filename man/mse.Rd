@@ -12,11 +12,12 @@ mse(y, yhat)
 \item{yhat}{A \code{vector} of predicted \eqn{\hat{y}}{y hat} values.}
 }
 \value{
-A \code{double} indicating the MSE
+The MSE in \code{numeric} form.
 }
 \description{
 Calculates the mean square of the model by taking the mean of the
-sum of squares between the truth, \eqn{y}, and the predicted, \eqn{\hat{y}}{y hat} at each observation \eqn{i}.
+sum of squares between the truth, \eqn{y}, and the predicted, \eqn{\hat{y}}{y hat}
+at each observation \eqn{i}.
 }
 \details{
 The equation for MSE is:
@@ -30,8 +31,8 @@ set.seed(100)
 n = 1e2
 
 y = rnorm(n)
-yhat = rnorm(n,0.5)
+yhat = rnorm(n, 0.5)
 
 # Compute
-o = mse(y,yhat)
+o = mse(y, yhat)
 }

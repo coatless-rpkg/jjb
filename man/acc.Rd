@@ -2,7 +2,7 @@
 % Please edit documentation in R/modeling.R
 \name{acc}
 \alias{acc}
-\title{Accuracy of the model}
+\title{Accuracy of the Model}
 \usage{
 acc(y, yhat)
 }
@@ -12,7 +12,7 @@ acc(y, yhat)
 \item{yhat}{A \code{vector} of predicted \eqn{\hat{y}}{y hat} values.}
 }
 \value{
-A \code{double} indicating the accuracy of the classification
+The accuracy of the classification in \code{numeric} form.
 }
 \description{
 Calculates the accuracy of the model by taking the mean of the number of times
@@ -29,5 +29,5 @@ y = round(runif(n))
 yhat = round(runif(n))
 
 # Compute
-o = acc(y,yhat)
+o = acc(y, yhat)
 }

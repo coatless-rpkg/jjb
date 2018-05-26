@@ -2,20 +2,23 @@
 % Please edit documentation in R/modeling.R
 \name{floor_and_cap}
 \alias{floor_and_cap}
-\title{Floor and Cap a dataset}
+\title{Floor and Cap a Numeric Variable}
 \usage{
 floor_and_cap(x, probs = c(0.025, 0.975))
 }
 \arguments{
 \item{x}{A \code{vector} that has length \eqn{N}.}
 
-\item{probs}{A \code{vector} containing two values between 0 and 1, with the first being less than the second.}
+\item{probs}{A \code{vector} containing two values between 0 and 1, with the
+first being less than the second.}
 }
 \value{
 A \code{vector} with the values floored and capped.
 }
 \description{
-Floors and Caps a numeric variable.
+Determine the floor and cap of a numeric variable by taking quantiles.
+Using the quantiles, values in the data found to be \emph{lower} or \emph{higher} than
+the floor or cap are replaced.
 }
 \examples{
 
@@ -24,17 +27,14 @@ n = 100
 
 x = rnorm(n)
 
-x[n-1] = -99999
+x[n - 1] = -99999
 x[n] = 10000
 
 y = floor_and_cap(x)
 
 # Dataset example
 
-d = data.frame(x,y=rnorm(n))
+d = data.frame(x, y = rnorm(n))
 
-o = sapply(d,floor_and_cap)
-}
-\author{
-James J Balamuta
+o = sapply(d, floor_and_cap)
 }
