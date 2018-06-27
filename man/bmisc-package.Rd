@@ -7,7 +7,7 @@
 \title{bmisc: Balamuta Miscellaneous}
 \description{
 Sets of common functions used for manipulating colors,
-interacting with RStudio, modeling, formating, and more.
+detecting and interacting with RStudio, modeling, formating, and more.
 }
 \seealso{
 Useful links:

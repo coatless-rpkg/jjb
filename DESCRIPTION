@@ -2,7 +2,6 @@ Package: bmisc
 Type: Package
 Title: Balamuta Miscellaneous
 Version: 0.5.0
-Date: 2018-05-20
 Authors@R: c(
     person(given ="James", family = "Balamuta", 
            email="balamut2@illinois.edu", role = c("aut", "cph","cre"))
@@ -11,6 +10,6 @@ License: GPL-3
 URL: https://github.com/coatless/bmisc
 BugReports: https://github.com/coatless/bmisc/issues
 Description: Sets of common functions used for manipulating colors,
-    interacting with RStudio, modeling, formating, and more.
+    detecting and interacting with RStudio, modeling, formating, and more. 
 RoxygenNote: 6.0.1
 Roxygen: list(markdown = TRUE)
