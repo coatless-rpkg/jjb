@@ -24,28 +24,28 @@ sys.arch = if( Sys.info()['machine'] == "x86_64" ) { "x64" } else { "x32" }
 #' 
 #' Performs a check to determine the OS
 #' @return Either \code{TRUE} or \code{FALSE}
-#' @rdname is.os
+#' @rdname is_os
 #' @export
 #' @author James Joseph Balamuta
-is.windows = function(){
+is_windows = function(){
   sys.name == "Windows"
 }
 
-#' @rdname is.os
+#' @rdname is_os
 #' @export
-is.macos = function(){
+is_macos = function(){
   sys.name == "Darwin"
 }
 
-#' @rdname is.os
+#' @rdname is_os
 #' @export
-is.linux = function(){
+is_linux = function(){
   sys.name == "Linux"
 }
 
-#' @rdname is.os
+#' @rdname is_os
 #' @export
-is.sun = function(){
+is_sun = function(){
   sys.name == "SunOS"
 }
 
@@ -57,35 +57,35 @@ is.sun = function(){
 #' If any of these functions are called
 #' on the wrong operating system. A stop error 
 #' is triggered and the function will fail.
-#' @rdname require.os
+#' @rdname require_os
 #' @export
 #' @author James Joseph Balamuta
-require.linux = function(){
-  if(!is.linux()){
+require_linux = function(){
+  if(!is_linux()){
     stop("This function is only supported on Linux!")
   }
 }
 
-#' @rdname require.os
+#' @rdname require_os
 #' @export
-require.windows = function(){
-  if(!is.windows()){
+require_windows = function(){
+  if(!is_windows()){
     stop("This function is only supported on Windows!")
   }
 }
 
-#' @rdname require.os
+#' @rdname require_os
 #' @export
-require.macos = function(){
-  if(!is.macos()){
+require_macos = function(){
+  if(!is_macos()){
     stop("This function is only supported on MacOS!")
   }
 }
 
-#' @rdname require.os
+#' @rdname require_os
 #' @export
-require.sun = function(){
-  if(!is.sun()){
+require_sun = function(){
+  if(!is_sun()){
     stop("This function is only supported on Solaris!")
   }
 }
