@@ -8,7 +8,7 @@ Authors@R: c(
     )
 License: GPL (>= 2)
 Description: Set of common functions used for manipulating colors,
-    detecting and interacting with RStudio, modeling, formatting, determing
+    detecting and interacting with 'RStudio', modeling, formatting, determining
     users' operating system, feature scaling, and more! 
 RoxygenNote: 6.1.0
 Encoding: UTF-8

@@ -7,7 +7,7 @@
 \title{jjb: Balamuta Miscellaneous}
 \description{
 Set of common functions used for manipulating colors,
-    detecting and interacting with RStudio, modeling, formatting, determing
+    detecting and interacting with 'RStudio', modeling, formatting, determining
     users' operating system, feature scaling, and more!
 }
 \author{
