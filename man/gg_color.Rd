@@ -28,7 +28,7 @@ gg_color(1)
 gg_color(5)
 }
 \references{
-https://stackoverflow.com/questions/8197559/emulate-ggplot2-default-color-palette
+\url{https://stackoverflow.com/questions/8197559/emulate-ggplot2-default-color-palette}
 }
 \author{
 John Colby

@@ -34,7 +34,7 @@
 #' # Five colors
 #' gg_color(5)
 #' @references 
-#' https://stackoverflow.com/questions/8197559/emulate-ggplot2-default-color-palette
+#' <https://stackoverflow.com/questions/8197559/emulate-ggplot2-default-color-palette>
 gg_color = function(n) {
   hues = seq(15, 375, length = n + 1)
   hcl(h = hues, l = 70, c = 100)[-(n + 1)]
@@ -72,7 +72,7 @@ int_to_hex = function(n) {
 #' @param pound A `bool` that indicates whether a pound sign should be
 #'              prepended to the hexadecimal.
 #'              
-#' @return A `string` containing the hexadecimal informatoin.
+#' @return A `string` containing the hexadecimal information.
 #' @export
 #' @examples
 #' # Hexadecimal with pound sign
