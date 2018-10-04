@@ -11,6 +11,6 @@ Set of common functions used for manipulating colors,
     users' operating system, feature scaling, and more!
 }
 \author{
-\strong{Maintainer}: James Balamuta \email{balamut2@illinois.edu} [copyright holder]
+\strong{Maintainer}: James Balamuta \email{balamut2@illinois.edu} (0000-0003-2826-8458) [copyright holder]
 
 }
