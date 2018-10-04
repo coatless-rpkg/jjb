@@ -78,12 +78,12 @@ is_rstudio = function(){
 #' @author JJB
 #' @export
 #' @examples
-#' \dontrun{
+#' \donttest{
 #' # Turn on external graphs
 #' external_graphs()
 #' 
 #' # Turn off external graphs
-#' external_graphs(F)
+#' external_graphs(FALSE)
 #' }
 external_graphs = function(ext = TRUE){
   if( is_rstudio() ){

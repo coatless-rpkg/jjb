@@ -23,10 +23,11 @@
 #' @return New directory on file system
 #' @export
 #' @examples 
-#' \dontrun{
+#' \donttest{
 #' # Make directory from working directory
 #' mkdir("toad")
 #' 
+#' ## This assumes the computer is on Windows and the C drive exists.
 #' # Make directory from absolute path
 #' mkdir("C:/path/to/dir/toad")
 #' }

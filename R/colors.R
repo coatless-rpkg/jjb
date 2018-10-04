@@ -13,33 +13,6 @@
 # You should have received a copy of the GPL-3 License along with `jjb`.
 # If not, see <https://opensource.org/licenses/GPL-3.0>.
 
-#' Emulate ggplot2 default color palette
-#'
-#' Autogenerate a colors according to the ggplot selection mechanism. 
-#' 
-#' @param n An `integer` indicating how many colors user wants.
-#' 
-#' @return A `vector` containing `n` colors
-#' 
-#' @author John Colby
-#' @export
-#' @details 
-#' This implementation is based off an answer given on StackOverflow by
-#' John Colby. 
-#' @examples
-#' 
-#' # Only 1 color
-#' gg_color(1)
-#' 
-#' # Five colors
-#' gg_color(5)
-#' @references 
-#' <https://stackoverflow.com/questions/8197559/emulate-ggplot2-default-color-palette>
-gg_color = function(n) {
-  hues = seq(15, 375, length = n + 1)
-  hcl(h = hues, l = 70, c = 100)[-(n + 1)]
-}
-
 #' Convert 0-255 to a Hex number
 #'
 #' This is a helper function for [`rgb_to_hex`]. This function takes a
