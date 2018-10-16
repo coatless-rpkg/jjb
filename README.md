@@ -39,6 +39,4 @@ library("jjb")
 
 ### Licensing
 
-GPL-3
-
-Please retain the attributions behind the functions listed. 
+GPL (>= 2)

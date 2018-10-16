@@ -3,13 +3,13 @@ note <- sprintf("R package (version %s)", meta$Version)
 
 citHeader("To cite balamuta in publications use:")
 citEntry(entry = "Misc",
-         title = "Balamuta R Functions",
+         title = "Balamuta Miscellaneous",
          author = person("James", "Balamuta"),
          year = year,  
          howpublished = note,
-         note = "GitHub repository: \\url{https://github.com/coatless/balamuta}",
-         url = "https://cran.r-project.org/package=balamuta",
+         note = "GitHub repository: \\url{https://github.com/coatless/bmisc}",
+         url = "https://cran.r-project.org/package=jjb",
          textVersion =
-           paste0("James Balamuta (", year,"). Balamuta R Functions. ",
-                  note, ". GitHub repository: https://github.com/coatless/balamuta.")
+           paste0("James Balamuta (", year,"). Balamuta Miscellaneous. ",
+                  note, ". GitHub repository: https://github.com/coatless/bmisc.")
 )

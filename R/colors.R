@@ -1,44 +1,17 @@
 # Copyright (C) 2015 - 2018  James Balamuta
 #
-# This file is part of `bmisc` R Package
+# This file is part of `jjb` R Package
 #
-# The `bmisc` R package is free software: you can redistribute it and/or modify
+# The `jjb` R package is free software: you can redistribute it and/or modify
 # it under the terms of the GPL-3 LICENSE included within the packages source 
 # as the LICENSE file.
 #
-# The `bmisc` R package is distributed in the hope that it will be useful, but
+# The `jjb` R package is distributed in the hope that it will be useful, but
 # WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 #
-# You should have received a copy of the GPL-3 License along with `bmisc`.
+# You should have received a copy of the GPL-3 License along with `jjb`.
 # If not, see <https://opensource.org/licenses/GPL-3.0>.
-
-#' Emulate ggplot2 default color palette
-#'
-#' Autogenerate a colors according to the ggplot selection mechanism. 
-#' 
-#' @param n An `integer` indicating how many colors user wants.
-#' 
-#' @return A `vector` containing `n` colors
-#' 
-#' @author John Colby
-#' @export
-#' @details 
-#' This implementation is based off an answer given on StackOverflow by
-#' John Colby. 
-#' @examples
-#' 
-#' # Only 1 color
-#' gg_color(1)
-#' 
-#' # Five colors
-#' gg_color(5)
-#' @references 
-#' https://stackoverflow.com/questions/8197559/emulate-ggplot2-default-color-palette
-gg_color = function(n) {
-  hues = seq(15, 375, length = n + 1)
-  hcl(h = hues, l = 70, c = 100)[-(n + 1)]
-}
 
 #' Convert 0-255 to a Hex number
 #'
@@ -72,7 +45,7 @@ int_to_hex = function(n) {
 #' @param pound A `bool` that indicates whether a pound sign should be
 #'              prepended to the hexadecimal.
 #'              
-#' @return A `string` containing the hexadecimal informatoin.
+#' @return A `string` containing the hexadecimal information.
 #' @export
 #' @examples
 #' # Hexadecimal with pound sign

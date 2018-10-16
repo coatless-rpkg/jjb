@@ -4,7 +4,6 @@
 \alias{feature_scaling}
 \alias{feature_rescale}
 \alias{feature_derescale}
-\alias{feature_derescale}
 \alias{feature_norm}
 \alias{feature_denorm}
 \alias{feature_standardize}

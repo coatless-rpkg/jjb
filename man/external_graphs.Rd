@@ -30,12 +30,12 @@ Also, the active graphing environment will be killed. As a result, any graphs
 that are open will be deleted. You will have to regraph them.
 }
 \examples{
-\dontrun{
+\donttest{
 # Turn on external graphs
 external_graphs()
 
 # Turn off external graphs
-external_graphs(F)
+external_graphs(FALSE)
 }
 }
 \author{

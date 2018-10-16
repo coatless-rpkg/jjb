@@ -3,7 +3,6 @@
 ^\.travis\.yml$
 LICENSE\.md
 README\.md
-NEWS\.md
 cran-comments\.md
 ^LICENSE\.md$
 ^cran-comments\.md$

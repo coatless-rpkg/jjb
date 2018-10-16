@@ -17,7 +17,7 @@ rgb_to_hex(R, G, B, pound = TRUE)
 prepended to the hexadecimal.}
 }
 \value{
-A \code{string} containing the hexadecimal informatoin.
+A \code{string} containing the hexadecimal information.
 }
 \description{
 This function converts an RGB value to the hexadecimal numbering system.
