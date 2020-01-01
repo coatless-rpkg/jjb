@@ -16,5 +16,5 @@ Detects whether R is open in RStudio.
 is_rstudio()
 }
 \author{
-JJB
+James Balamuta
 }

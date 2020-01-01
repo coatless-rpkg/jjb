@@ -20,5 +20,5 @@ Calculates and returns the trace of a square matrix.
 tr(diag(2))
 }
 \author{
-James J Balamuta
+James Balamuta
 }

@@ -1,4 +1,4 @@
-# Copyright (C) 2015 - 2018  James Balamuta
+# Copyright (C) 2015 - 2020  James Balamuta
 #
 # This file is part of `jjb` R Package
 #

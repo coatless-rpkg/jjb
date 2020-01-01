@@ -1,4 +1,4 @@
-# Copyright (C) 2015 - 2018  James Balamuta
+# Copyright (C) 2015 - 2020  James Balamuta
 #
 # This file is part of `jjb` R Package
 #
@@ -18,9 +18,16 @@
 #' 
 #' Create a directory using either a relative path or an absolute path.
 #' 
-#' @param dir A \code{string} indicating the directory to make.
-#' @param r   A \code{boolean} that indicates whether the directories should be made recursively
-#' @return New directory on file system
+#' @param dir A `string` indicating the directory to make.
+#' @param r   A `boolean` that indicates whether the directories should be 
+#'            made recursively
+#' 
+#' @return 
+#' New directory on file system
+#' 
+#' @author 
+#' James Balamuta
+#' 
 #' @export
 #' @examples 
 #' \donttest{
@@ -46,16 +53,25 @@ mkdir = function(dir, r = TRUE) {
 #' Lag Vector Values
 #' 
 #' Provides a lagging mechanism for vector data.
-#' @param x   A \code{vec} of data.
-#' @param lag An \code{integer}.
-#' @return A \code{vector} with lagged values / NAs. 
+#' 
+#' @param x   A `vec` of data.
+#' @param lag An `integer` value.
+#' 
+#' @return 
+#' A `vector` with lagged values and `NA`s. 
+#' 
+#' @author 
+#' James Balamuta
+#' 
 #' @export
 #' @examples 
 #' x = rnorm(10)
 #' 
 #' lagged(x, 2)
-lagged = function(x, lag = 1){
-  if(lag == 0){return(x)}
+lagged = function(x, lag = 1) {
+  if (lag == 0) {
+    return(x)
+  }
   x[1:lag] = NA
   
   return(x)

@@ -1,4 +1,4 @@
-# Copyright (C) 2015 - 2018  James Balamuta
+# Copyright (C) 2015 - 2020  James Balamuta
 #
 # This file is part of `jjb` R Package
 #
@@ -21,7 +21,8 @@
 #' @param y    A `vector` of the true \eqn{y} values
 #' @param yhat A `vector` of predicted \eqn{\hat{y}}{y hat} values. 
 #' 
-#' @return The accuracy of the classification in `numeric` form.
+#' @return 
+#' The accuracy of the classification in `numeric` form.
 #' 
 #' @export
 #' @examples 
@@ -48,7 +49,8 @@ acc = function(y, yhat) {
 #' 
 #' @inheritParams acc
 #' 
-#' @return The MSE in `numeric` form.
+#' @return 
+#' The MSE in `numeric` form.
 #' 
 #' @details 
 #' The equation for MSE is:
@@ -79,7 +81,8 @@ mse = function(y, yhat) {
 #'  
 #' @inheritParams acc
 #' 
-#' @return The RMSE in `numeric` form
+#' @return 
+#' The RMSE in `numeric` form
 #' 
 #' @details 
 #' The formula for RMSE is:
@@ -114,7 +117,8 @@ rmse = function(y, yhat) {
 #' @param probs  A `vector` containing two values between 0 and 1, with the
 #'               first being less than the second.
 #'               
-#' @return A `vector` with the values floored and capped. 
+#' @return 
+#' A `vector` with the values floored and capped. 
 #' 
 #' @export
 #' @examples 
@@ -162,7 +166,8 @@ floor_and_cap = function(x, probs = c(.025, 0.975)) {
 #' @param cast A `string vector` containing either:
 #'             `"n"` (numeric), `"c"` (character), or `"f"` (factor).
 #'             
-#' @return A `data.frame` with converted column types.
+#' @return 
+#' A `data.frame` with converted column types.
 #' 
 #' @export
 #' @examples 

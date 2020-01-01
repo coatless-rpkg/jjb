@@ -7,12 +7,12 @@
 char_at(x, index)
 }
 \arguments{
-\item{x}{A \code{character vector} to extract position from.}
+\item{x}{A \verb{character vector} to extract position from.}
 
 \item{index}{An \code{integer} between 1 and length \emph{n}.}
 }
 \value{
-A \code{character vector} of length \code{index}.
+A \verb{character vector} of length \code{index}.
 }
 \description{
 Returns the character at location \emph{i} inside the string.

@@ -1,4 +1,4 @@
-# Copyright (C) 2015 - 2018  James Balamuta
+# Copyright (C) 2015 - 2020  James Balamuta
 #
 # This file is part of `jjb` R Package
 #
@@ -16,11 +16,17 @@
 #' Feature Scaling
 #'
 #' Scale features in a datasets.
+#' 
 #' @param x      Numeric values
 #' @param x_min  Minimum non-normalized numeric value
 #' @param x_max  Maximum non-normalized numeric value
-#' @return A `numeric` vector.
-#' @author James Balamuta
+#' 
+#' @return 
+#' A `numeric` vector.
+#' 
+#' @author 
+#' James Balamuta
+#' 
 #' @details
 #' The following functions provide a means to either scale features or 
 #' to descale the features and return them to normal. These functions
@@ -93,6 +99,7 @@ feature_rescale = function(x, x_min = NULL, x_max = NULL) {
 }
 
 #' @param x_rescaled Rescaled values of `x`.
+#' 
 #' @rdname feature_scaling
 #' @export
 feature_derescale = function(x_rescaled, x_min, x_max){
@@ -100,8 +107,9 @@ feature_derescale = function(x_rescaled, x_min, x_max){
   x_rescaled * (x_max - x_min) + x_min
 }
 
-#' @rdname feature_scaling
 #' @param x_norm Euclidean norm of x
+#' 
+#' @rdname feature_scaling
 #' @export
 feature_norm = function(x, x_norm = NULL) {
   
@@ -115,6 +123,7 @@ feature_norm = function(x, x_norm = NULL) {
 }
 
 #' @param x_norm_std Euclidean vector of normalized `x` values.
+#' 
 #' @rdname feature_scaling
 #' @export
 #' @examples
@@ -139,6 +148,7 @@ feature_denorm = function(x_norm_std, x_norm = NULL) {
 
 #' @param x_mean Mean of `x` values
 #' @param x_sd   Standard Deviation of `x` values
+#' 
 #' @rdname feature_scaling
 #' @export
 #' @importFrom stats sd
@@ -154,6 +164,7 @@ feature_standardize = function(x, x_mean = NULL, x_sd = NULL) {
 }
 
 #' @param x_std   Z-transformed `x` values
+#' 
 #' @rdname feature_scaling
 #' @export
 #' @examples 

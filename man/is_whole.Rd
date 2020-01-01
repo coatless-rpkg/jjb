@@ -23,5 +23,5 @@ is_whole(c(.4,.5,.6))
 is_whole(c(7,.8,9))
 }
 \author{
-James J Balamuta
+James Balamuta
 }

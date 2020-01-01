@@ -1,4 +1,4 @@
-# Copyright (C) 2015 - 2018  James Balamuta
+# Copyright (C) 2015 - 2020  James Balamuta
 #
 # This file is part of `jjb` R Package
 #
@@ -17,18 +17,26 @@
 #' 
 #' Calculates and returns the trace of a square matrix.
 #' 
-#' @param x A \code{matrix} that is square e.g. \eqn{N \times N}{N x N}
+#' @param x A `matrix` that is square e.g. \eqn{N \times N}{N x N}
 #' 
-#' @return A \code{matrix} with circles imprinted within its dimensions.
+#' @return 
+#' A `matrix` with circles imprinted within its dimensions.
 #' 
-#' @author James J Balamuta
+#' @author 
+#' James Balamuta
+#' 
 #' @export
 #' @examples 
 #' # I_2 matrix
 #' tr(diag(2))
 tr = function(x){
-  if(!is.matrix(x)){stop("x is not a matrix.")}
-  if(nrow(x) != ncol(x)){stop("Trace is not defined on a non-square matrix.")}
+  if (!is.matrix(x)) {
+    stop(sprintf("`x` is not a matrix. `x` is %s", class(x)), call. = FALSE)
+  }
+  if (nrow(x) != ncol(x)) {
+    stop(sprintf("`x` must be a square matrix. `x` is %i x %i", nrow(x), ncol(x)),
+         call. = FALSE)
+  }
   sum(diag(x))
 }
 
@@ -44,12 +52,14 @@ tr = function(x){
 #' @param f        A `vector` of values that specify what the inside of the
 #'                 circles should be.
 #' 
-#' @return A `matrix` with circles imprinted within its dimensions.
+#' @return 
+#' A `matrix` with circles imprinted within its dimensions.
 #' 
-#' @author James J Balamuta
+#' @author 
+#' James Balamuta
+#' 
 #' @export
 #' @examples 
-#' 
 #' # Generate a basic circle matrix
 #' circle_matrix(10, 10, 3, 4, 2)
 #' 

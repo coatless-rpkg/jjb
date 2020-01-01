@@ -9,7 +9,8 @@ mkdir(dir, r = TRUE)
 \arguments{
 \item{dir}{A \code{string} indicating the directory to make.}
 
-\item{r}{A \code{boolean} that indicates whether the directories should be made recursively}
+\item{r}{A \code{boolean} that indicates whether the directories should be
+made recursively}
 }
 \value{
 New directory on file system
@@ -26,4 +27,7 @@ mkdir("toad")
 # Make directory from absolute path
 mkdir("C:/path/to/dir/toad")
 }
+}
+\author{
+James Balamuta
 }
