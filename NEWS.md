@@ -1,6 +1,14 @@
-# jjb 0.1.0
+## jjb 0.1.1
 
-## Highlights
+### Features
+
+### Changes
+
+- Improved error messages with more specific detail.
+
+## jjb 0.1.0
+
+### Features
 
 - RGB Color Modification
 - Project circles within a `matrix`
