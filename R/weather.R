@@ -1,4 +1,4 @@
-# Copyright (C) 2015 - 2018  James Balamuta
+# Copyright (C) 2015 - 2020  James Balamuta
 #
 # This file is part of `jjb` R Package
 #
@@ -20,7 +20,10 @@
 #' Converts temperature recorded in Celsius to Fahrenheit.
 #'
 #' @param t_celsius Temperature recorded in Celsius.
-#' @return A `numeric` vector.
+#' 
+#' @return 
+#' A `numeric` vector.
+#' 
 #' @export
 #' @examples 
 #' 
@@ -38,7 +41,10 @@ celsius_to_fahrenheit = function(t_celsius) {
 #' Converts temperature recorded in Fahrenheit to Celsius.
 #'
 #' @param t_fahrenheit Temperature recorded in Fahrenheit.
-#' @return A `numeric` vector.
+#' 
+#' @return 
+#' A `numeric` vector.
+#' 
 #' @export
 #' 
 #' @examples 
@@ -58,7 +64,10 @@ fahrenheit_to_celsius = function(t_fahrenheit) {
 #' Converts temperature recorded in Kelvin to Celsius.
 #'
 #' @param t_kelvin Temperature recorded in Kelvin.
-#' @return A `numeric` vector.
+#' 
+#' @return
+#' A `numeric` vector.
+#' 
 #' @export
 #' 
 #' @examples 
@@ -77,7 +86,9 @@ kelvin_to_celsius = function(t_kelvin) {
 #'
 #' @param t_celsius Temperature recorded in Celsius.
 #' 
-#' @return A `numeric` vector.
+#' @return 
+#' A `numeric` vector.
+#' 
 #' @export
 #' @examples 
 #' celsius_to_kelvin(92)
@@ -96,7 +107,9 @@ celsius_to_kelvin = function(t_celsius) {
 #'
 #' @param t_fahrenheit Temperature recorded in Fahrenheit.
 #' 
-#' @return A `numeric` vector.
+#' @return 
+#' A `numeric` vector.
+#' 
 #' @export
 #' @examples 
 #' fahrenheit_to_kelvin(92)
@@ -114,7 +127,9 @@ fahrenheit_to_kelvin = function(t_fahrenheit) {
 #'
 #' @param t_kelvin Temperature recorded in Kelvin.
 #' 
-#' @return A `numeric` vector.
+#' @return 
+#' A `numeric` vector.
+#' 
 #' @export
 #' @examples 
 #' kelvin_to_fahrenheit(92)

@@ -1,8 +1,11 @@
 ## `jjb`
 
-[![Linux Build Status](https://travis-ci.org/coatless/jjb.svg?branch=master)](https://travis-ci.org/coatless/jjb)
+<!-- badges: start -->
+[![R build
+status](https://github.com/coatless/jjb/workflows/R-CMD-check/badge.svg)](https://github.com/coatless/jjb/actions)
 [![CRAN RStudio mirror downloads](http://cranlogs.r-pkg.org/badges/jjb)](http://www.r-pkg.org/pkg/jjb)
 [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/jjb)](http://cran.r-project.org/package=jjb)
+<!-- badges: end -->
 
 The goal of `jjb` is to provide tools frequently used in analyses. As a 
 result, the package contains a large amount of functions I use in day to day

@@ -12,7 +12,7 @@ convert_cols(d, cast)
 \arguments{
 \item{d}{A \code{data.frame} that needs to have specific columns converted.}
 
-\item{cast}{A \code{string vector} containing either:
+\item{cast}{A \verb{string vector} containing either:
 \code{"n"} (numeric), \code{"c"} (character), or \code{"f"} (factor).}
 }
 \value{

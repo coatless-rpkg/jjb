@@ -1,4 +1,4 @@
-# Copyright (C) 2015 - 2018  James Balamuta
+# Copyright (C) 2015 - 2020  James Balamuta
 #
 # This file is part of `jjb` R Package
 #
@@ -20,7 +20,9 @@
 #' 
 #' @param n An `int`
 #' 
-#' @return A `string` of length 2. 
+#' @return 
+#' A `string` of length 2. 
+#' 
 #' @export
 #' @examples
 #' int_to_hex(22)
@@ -45,7 +47,9 @@ int_to_hex = function(n) {
 #' @param pound A `bool` that indicates whether a pound sign should be
 #'              prepended to the hexadecimal.
 #'              
-#' @return A `string` containing the hexadecimal information.
+#' @return 
+#' A `string` containing the hexadecimal information.
+#' 
 #' @export
 #' @examples
 #' # Hexadecimal with pound sign
@@ -70,7 +74,8 @@ rgb_to_hex = function(R, G, B, pound = TRUE) {
 #' @param rgb_value   A `vector` with length \eqn{3 \times 1}{3 x 1}.
 #' @param tint_factor A `double` that ranges between \eqn{[0, 1]}.
 #' 
-#' @return A `matrix` with dimensions \eqn{3 \times 1}{3 x 1}.
+#' @return
+#' A `matrix` with dimensions \eqn{3 \times 1}{3 x 1}.
 #' 
 #' @export
 #' @examples
@@ -99,7 +104,8 @@ tint = function(rgb_value, tint_factor = 0.2) {
 #' @param rgb_value    A `vector` with length \eqn{3 \times 1}{3 x 1}.
 #' @param shade_factor A `double` that ranges between \eqn{[0, 1]}.
 #' 
-#' @return A `matrix` with dimensions \eqn{3 \times 1}{3 x 1}.
+#' @return
+#' A `matrix` with dimensions \eqn{3 \times 1}{3 x 1}.
 #' 
 #' @export
 #' @examples

@@ -1,4 +1,4 @@
-# Copyright (C) 2015 - 2018  James Balamuta
+# Copyright (C) 2015 - 2020  James Balamuta
 #
 # This file is part of `jjb` R Package
 #
@@ -19,9 +19,11 @@
 #' 
 #' @param x A `numeric` value to check to see if it is an `integer`.
 #' 
-#' @return A `boolean` value indicating whether the value is an `integer` or not.
+#' @return 
+#' A `boolean` value indicating whether the value is an `integer` or not.
 #' 
-#' @author James J Balamuta
+#' @author 
+#' James Balamuta
 #' 
 #' @export
 #' @examples
@@ -30,4 +32,6 @@
 #' is_whole(c(1,2,3))
 #' is_whole(c(.4,.5,.6))
 #' is_whole(c(7,.8,9))
-is_whole = function(x) { is.numeric(x) && all(floor(x) == x) } 
+is_whole = function(x) { 
+  is.numeric(x) && all(floor(x) == x)
+} 

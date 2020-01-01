@@ -9,10 +9,10 @@ lagged(x, lag = 1)
 \arguments{
 \item{x}{A \code{vec} of data.}
 
-\item{lag}{An \code{integer}.}
+\item{lag}{An \code{integer} value.}
 }
 \value{
-A \code{vector} with lagged values / NAs.
+A \code{vector} with lagged values and \code{NA}s.
 }
 \description{
 Provides a lagging mechanism for vector data.
@@ -21,4 +21,7 @@ Provides a lagging mechanism for vector data.
 x = rnorm(10)
 
 lagged(x, 2)
+}
+\author{
+James Balamuta
 }

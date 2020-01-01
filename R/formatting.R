@@ -1,4 +1,4 @@
-# Copyright (C) 2015 - 2018  James Balamuta
+# Copyright (C) 2015 - 2020  James Balamuta
 #
 # This file is part of `jjb` R Package
 #
@@ -16,10 +16,16 @@
 #' Pad Numeric Numbers
 #' 
 #' Add zeros before start of the number
+#' 
 #' @param x  A `vector`
-#' @return A `character vector` that is padded to the length of the
+#' 
+#' @return 
+#' A `character vector` that is padded to the length of the
 #' maximum entry.
-#' @author James Balamuta
+#' 
+#' @author 
+#' James Balamuta
+#' 
 #' @export
 #' @examples 
 #' # Padding applied
@@ -39,9 +45,15 @@ pad_number = function(x){
 #' Create a "safe" url title
 #' 
 #' Takes a string, forces characters to lower case, then removes punctuation and switch spaces to - instead of _
+#' 
 #' @param st A \code{string} that needs to be a title in a url
-#' @return A \code{string} with the aforementioned modifications.
-#' @author James Balamuta
+#' 
+#' @return 
+#' A \code{string} with the aforementioned modifications.
+#' 
+#' @author
+#' James Balamuta
+#' 
 #' @export
 #' @examples 
 #' url_title("My Name is Jaime!")

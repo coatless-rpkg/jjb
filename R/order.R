@@ -1,4 +1,4 @@
-# Copyright (C) 2015 - 2018  James Balamuta
+# Copyright (C) 2015 - 2020  James Balamuta
 #
 # This file is part of `jjb` R Package
 #
@@ -37,7 +37,8 @@ retrieve_sorted_elements = function(x, n = 1, find_max = TRUE) {
 #' @param x       Data vector
 #' @param n       Number of observations to select
 #' 
-#' @return A `vector` containing the maximum/minimum of \eqn{n} elements.
+#' @return 
+#' A `vector` containing the maximum/minimum of \eqn{n} elements.
 #' 
 #' @details 
 #' The underlying function sorts the data using [base::sort()] and then extracts

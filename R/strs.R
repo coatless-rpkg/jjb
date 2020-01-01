@@ -1,4 +1,4 @@
-# Copyright (C) 2015 - 2018  James Balamuta
+# Copyright (C) 2015 - 2020  James Balamuta
 #
 # This file is part of `jjb` R Package
 #
@@ -20,9 +20,12 @@
 #' @param x     A `character vector` to extract position from. 
 #' @param index An `integer` between 1 and length _n_. 
 #' 
-#' @return A `character vector` of length `index`.
+#' @return 
+#' A `character vector` of length `index`.
 #' 
-#' @author James J Balamuta
+#' @author 
+#' James J Balamuta
+#' 
 #' @export
 #' @examples
 #' # Example string

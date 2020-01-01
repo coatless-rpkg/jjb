@@ -1,15 +1,15 @@
 year <- sub("-.*", "", meta$Date)
 note <- sprintf("R package (version %s)", meta$Version)
 
-citHeader("To cite balamuta in publications use:")
+citHeader("To cite `jjb` in publications use:")
 citEntry(entry = "Misc",
          title = "Balamuta Miscellaneous",
          author = person("James", "Balamuta"),
          year = year,  
          howpublished = note,
-         note = "GitHub repository: \\url{https://github.com/coatless/bmisc}",
+         note = "GitHub repository: \\url{https://github.com/coatless/jjb}",
          url = "https://cran.r-project.org/package=jjb",
          textVersion =
            paste0("James Balamuta (", year,"). Balamuta Miscellaneous. ",
-                  note, ". GitHub repository: https://github.com/coatless/bmisc.")
+                  note, ". GitHub repository: https://github.com/coatless/jjb.")
 )

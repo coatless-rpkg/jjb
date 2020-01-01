@@ -10,7 +10,7 @@ pad_number(x)
 \item{x}{A \code{vector}}
 }
 \value{
-A \code{character vector} that is padded to the length of the
+A \verb{character vector} that is padded to the length of the
 maximum entry.
 }
 \description{

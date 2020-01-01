@@ -10,7 +10,15 @@ Set of common functions used for manipulating colors,
     detecting and interacting with 'RStudio', modeling, formatting, determining
     users' operating system, feature scaling, and more!
 }
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/coatless/jjb}
+  \item Report bugs at \url{https://github.com/coatless/jjb/issues}
+}
+
+}
 \author{
-\strong{Maintainer}: James Balamuta \email{balamut2@illinois.edu} (0000-0003-2826-8458) [copyright holder]
+\strong{Maintainer}: James Balamuta \email{balamut2@illinois.edu} (\href{https://orcid.org/0000-0003-2826-8458}{ORCID}) [copyright holder]
 
 }

@@ -27,7 +27,6 @@ A \code{matrix} with circles imprinted within its dimensions.
 Takes a default matrix and embeds circles within the matrix.
 }
 \examples{
-
 # Generate a basic circle matrix
 circle_matrix(10, 10, 3, 4, 2)
 
@@ -38,5 +37,5 @@ circle_matrix(10, 20, c(3,6), c(4,6), c(2,2))
 circle_matrix(10, 20, c(3,6), c(4,6), c(2,2), f = c(1,2))
 }
 \author{
-James J Balamuta
+James Balamuta
 }

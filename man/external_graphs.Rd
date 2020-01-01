@@ -10,6 +10,10 @@ external_graphs(ext = TRUE)
 \item{ext}{A \code{logical} indicating whether the graph should be done externally
 or internally in RStudio.}
 }
+\value{
+There is no return value. Instead, once finished, the function will cause a
+side effect to occur. See details for more.
+}
 \description{
 Checks to see if the user is in RStudio. If so, then it changes the device
 to a popup window.
@@ -39,5 +43,5 @@ external_graphs(FALSE)
 }
 }
 \author{
-JJB
+James Balamuta
 }
