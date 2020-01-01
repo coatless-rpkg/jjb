@@ -1,4 +1,4 @@
-# Copyright (C) 2015 - 2018  James Balamuta
+# Copyright (C) 2015 - 2020  James Balamuta
 #
 # This file is part of `jjb` R Package
 #
@@ -18,7 +18,8 @@
 #' 
 #' Provides the default operating system graphics utility
 #' 
-#' @return A `string` that is either:
+#' @return 
+#' A `string` that is either:
 #' 
 #' - `"quartz"`: if on MacOS
 #' - `"windows"`: if on Windows
@@ -26,13 +27,15 @@
 #' 
 #' @seealso [is_rstudio]
 #' 
-#' @author James Joseph Balamuta
+#' @author 
+#' James Balamuta
+#' 
 #' @export
 #' @examples 
 #' # Returns a string depending on test platform
-#' get_graphic_driver()
-get_graphic_driver = function(){
-  switch(tolower(sys.name),
+#' system_graphic_driver()
+system_graphic_driver = function(){
+  switch(tolower(system_name()),
          "darwin"  = "quartz",
          "linux"   = "x11",
          "windows" = "windows",
@@ -46,7 +49,10 @@ get_graphic_driver = function(){
 #' 
 #' @return 
 #' A `logical` value that indicates whether R is open in RStudio.
-#' @author JJB
+#' 
+#' @author
+#' James Balamuta
+#' 
 #' @export
 #' @examples
 #' is_rstudio()
@@ -61,6 +67,11 @@ is_rstudio = function(){
 #' 
 #' @param ext A `logical` indicating whether the graph should be done externally
 #'            or internally in RStudio.
+#'
+#' @return 
+#' There is no return value. Instead, once finished, the function will cause a
+#' side effect to occur. See details for more.
+#' 
 #' @details 
 #' Depending on the operating system, the default drivers attempted to be
 #' used are:
@@ -75,7 +86,9 @@ is_rstudio = function(){
 #' Also, the active graphing environment will be killed. As a result, any graphs
 #' that are open will be deleted. You will have to regraph them. 
 #' 
-#' @author JJB
+#' @author 
+#' James Balamuta
+#' 
 #' @export
 #' @examples
 #' \donttest{
@@ -85,11 +98,10 @@ is_rstudio = function(){
 #' # Turn off external graphs
 #' external_graphs(FALSE)
 #' }
-external_graphs = function(ext = TRUE){
-  if( is_rstudio() ){
-    if(isTRUE(ext)){
-      a = get_graphic_driver()
-      options("device" = a)
+external_graphs = function(ext = TRUE) {
+  if (is_rstudio()) {
+    if (isTRUE(ext)) {
+      options("device" = system_graphic_driver())
     } else{
       options("device" = "RStudioGD")
     }
