@@ -1,7 +1,5 @@
 ## jjb 0.1.1
 
-### Features
-
 ### Changes
 
 - Improved error messages with more specific detail.
