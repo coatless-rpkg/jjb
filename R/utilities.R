@@ -85,6 +85,8 @@ lagged = function(x, lag = 1) {
 #' 
 #' @param pkgs  character vector of the names of packages whose older versions
 #'              should be downloaded from the repositories.
+#' @param versions character vector of the respective package versions to 
+#'              download.
 #' @param lib   character vector giving the library directories where to 
 #'              install the packages. Recycled as needed. If missing, defaults 
 #'              to the first element of [base::.libPaths()].
@@ -92,6 +94,7 @@ lagged = function(x, lag = 1) {
 #'              e.g., the URL of a CRAN mirror such as "`https://cloud.r-project.org`".
 #'              For more details on supported URL schemes see url.
 #' @param ...   Additional parameters passed onto [utils::install.packages()].
+#' 
 #' 
 #' @references 
 #' Documentation includes parts of the [utils::install.packages()] help 

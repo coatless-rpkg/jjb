@@ -10,6 +10,9 @@ install_older_packages(pkgs, versions, lib, repos = getOption("repos"), ...)
 \item{pkgs}{character vector of the names of packages whose older versions
 should be downloaded from the repositories.}
 
+\item{versions}{character vector of the respective package versions to
+download.}
+
 \item{lib}{character vector giving the library directories where to
 install the packages. Recycled as needed. If missing, defaults
 to the first element of \code{\link[base:libPaths]{base::.libPaths()}}.}
