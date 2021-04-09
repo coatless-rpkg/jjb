@@ -107,7 +107,7 @@ install_older_packages = function(pkgs, versions, lib,
   repo_src_pkg_url  = paste0(repo_base_url, repo_src_archive,
                              pkgs, "/", pkgs, "_", versions, ".tar.gz")
   
-  install.packages(repo_src_pkg_url,
+  utils::install.packages(repo_src_pkg_url,
                    lib = lib,
                    repos = NULL,
                    type = "source")
