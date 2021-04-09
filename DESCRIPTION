@@ -13,6 +13,6 @@ Description: Set of common functions used for manipulating colors,
     users' operating system, feature scaling, and more!
 URL: https://github.com/coatless/jjb
 BugReports: https://github.com/coatless/jjb/issues
-RoxygenNote: 7.0.2
+RoxygenNote: 7.1.1
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
