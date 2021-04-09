@@ -1,4 +1,4 @@
-# Copyright (C) 2015 - 2020  James Balamuta
+# Copyright (C) 2015 - 2021  James Balamuta
 #
 # This file is part of `jjb` R Package
 #
@@ -75,4 +75,40 @@ lagged = function(x, lag = 1) {
   x[1:lag] = NA
   
   return(x)
+}
+
+
+#' Install an older package from source
+#' 
+#' A light wrapper around [utils::install.packages()] that allows for 
+#' direct downloading of an older package's source from the CRAN archive.
+#' 
+#' @param pkgs  character vector of the names of packages whose older versions
+#'              should be downloaded from the repositories.
+#' @param lib   character vector giving the library directories where to 
+#'              install the packages. Recycled as needed. If missing, defaults 
+#'              to the first element of [base::.libPaths()].
+#' @param repos character vector, the base URL(s) of the repositories to use, 
+#'              e.g., the URL of a CRAN mirror such as "`https://cloud.r-project.org`".
+#'              For more details on supported URL schemes see url.
+#' @param ...   Additional parameters passed onto [utils::install.packages()].
+#' 
+#' @references 
+#' Documentation includes parts of the [utils::install.packages()] help 
+#' manual.
+install_older_packages = function(pkgs, versions, lib, 
+                                  repos = getOption("repos"), ...) {
+  
+  stopifnot(length(pkgs) != length(versions)) 
+  
+  repo_base_url = repos
+  repo_src_archive =  "src/contrib/Archive/"
+  
+  repo_src_pkg_url  = paste0(repo_base_url, repo_src_archive,
+                             pkgs, "/", pkgs, "_", versions, ".tar.gz")
+  
+  install.packages(repo_src_pkg_url,
+                   lib = lib,
+                   repos = NULL,
+                   type = "source")
 }
