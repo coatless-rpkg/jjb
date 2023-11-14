@@ -1,10 +1,9 @@
 ## `jjb`
 
 <!-- badges: start -->
-[![R build
-status](https://github.com/coatless/jjb/workflows/R-CMD-check/badge.svg)](https://github.com/coatless/jjb/actions)
-[![CRAN RStudio mirror downloads](http://cranlogs.r-pkg.org/badges/jjb)](http://www.r-pkg.org/pkg/jjb)
-[![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/jjb)](http://cran.r-project.org/package=jjb)
+[![R-CMD-check](https://github.com/coatless-rpkg/jjb/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/coatless-rpkg/jjb/actions/workflows/R-CMD-check.yaml)
+[![CRAN RStudio mirror downloads](https://cranlogs.r-pkg.org/badges/jjb)](https://www.r-pkg.org/pkg/jjb)
+[![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/jjb)](https://cran.r-project.org/package=jjb)
 <!-- badges: end -->
 
 The goal of `jjb` is to provide tools frequently used in analyses. As a 
@@ -27,11 +26,11 @@ For those who like living on the edge, feel free to use a copy of the
 development version by doing:
 
 ```r
-# Install devtools
-install.packages("devtools")
+# Install remotes
+install.packages("remotes")
 
 # Install the package from github
-devtools::install_github("coatless/jjb")
+remotes::install_github("coatless-rpkg/jjb")
 ```
 
 ### Usage
