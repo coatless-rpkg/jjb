@@ -1,7 +1,7 @@
 Package: jjb
 Type: Package
 Title: Balamuta Miscellaneous
-Version: 0.1.1
+Version: 0.1.2
 Authors@R: c(
     person("James", "Balamuta", email = "balamut2@illinois.edu", 
            role = c("aut", "cre", "cph"), 
@@ -11,8 +11,8 @@ License: GPL (>= 2)
 Description: Set of common functions used for manipulating colors,
     detecting and interacting with 'RStudio', modeling, formatting, determining
     users' operating system, feature scaling, and more!
-URL: https://github.com/coatless/jjb
-BugReports: https://github.com/coatless/jjb/issues
-RoxygenNote: 7.1.1
+URL: https://github.com/coatless-rpkg/jjb, https://r-pkg.thecoatlessprofessor.com/jjb/
+BugReports: https://github.com/coatless-rpkg/jjb/issues
+RoxygenNote: 7.2.3
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)

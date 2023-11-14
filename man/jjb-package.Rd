@@ -6,15 +6,14 @@
 \alias{jjb-package}
 \title{jjb: Balamuta Miscellaneous}
 \description{
-Set of common functions used for manipulating colors,
-    detecting and interacting with 'RStudio', modeling, formatting, determining
-    users' operating system, feature scaling, and more!
+Set of common functions used for manipulating colors, detecting and interacting with 'RStudio', modeling, formatting, determining users' operating system, feature scaling, and more!
 }
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://github.com/coatless/jjb}
-  \item Report bugs at \url{https://github.com/coatless/jjb/issues}
+  \item \url{https://github.com/coatless-rpkg/jjb}
+  \item \url{https://r-pkg.thecoatlessprofessor.com/jjb/}
+  \item Report bugs at \url{https://github.com/coatless-rpkg/jjb/issues}
 }
 
 }
